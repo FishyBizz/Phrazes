@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="51dp"
         android:layout_marginEnd="178dp"
-        android:text="Hello BUTTON"
+        android:text="Hello BUTTON 2.0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
