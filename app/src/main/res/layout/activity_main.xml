@@ -6,28 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="237dp"
-        android:layout_height="32dp"
-        android:gravity="center_horizontal"
-        android:text="Already have an account?"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.767" />
-
     <Button
         android:id="@+id/button"
         android:layout_width="178dp"
         android:layout_height="50dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="124dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginBottom="304dp"
         android:onClick="onStartLogin"
         android:text="Login"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
