@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "144629147263",
+    "project_id": "phrazes-55dd1",
+    "storage_bucket": "phrazes-55dd1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:144629147263:android:84f8be201309cff8c0c14a",
+        "android_client_info": {
+          "package_name": "edu.msu.cse476.phrazes.phrazes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYzdijbQRNRxh75JFalJH-VK7srf12SL0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

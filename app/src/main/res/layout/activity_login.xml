@@ -57,7 +57,7 @@
             app:boxStrokeColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtSignInEmail"
+                android:id="@+id/signInEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
@@ -74,13 +74,13 @@
             android:hint="@string/password_box"
             android:textColorHint="@color/black"
             app:boxStrokeColor="@color/black"
-            app:passwordToggleEnabled="true">
+            app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtSignInPassword"
+                android:id="@+id/signInPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
+                android:inputType="textPassword"
                 android:singleLine="true"
                 android:textColor="@color/black" />
 
