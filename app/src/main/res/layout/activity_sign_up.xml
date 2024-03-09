@@ -41,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Sign Up"
+            android:text="@string/title_sign_up"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="50sp" />
@@ -51,7 +51,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:hint="full_name"
+            android:hint="@string/name_box"
             android:textColorHint="@color/black"
             app:boxStrokeColor="@color/black">
 
@@ -70,7 +70,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="Email"
+            android:hint="@string/email_box"
             android:textColorHint="@color/black"
             app:boxStrokeColor="@color/black">
 
@@ -85,13 +85,12 @@
         </com.google.android.material.textfield.TextInputLayout>
 
 
-
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="Password"
+            android:hint="@string/password_box"
             android:textColorHint="@color/black"
             app:boxStrokeColor="@color/black"
             app:passwordToggleEnabled="true">
@@ -111,7 +110,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="Confirm Password"
+            android:hint="@string/confirm_box"
             android:textColorHint="@color/black"
             app:boxStrokeColor="@color/black"
             app:passwordToggleEnabled="true">
@@ -147,7 +146,7 @@
                 android:paddingTop="10dp"
                 android:paddingEnd="20dp"
                 android:paddingBottom="20dp"
-                android:text="Sign Up"
+                android:text="@string/sign_up_button"
                 app:cornerRadius="10dp" />
 
         </FrameLayout>
@@ -162,7 +161,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Already have an Account ?"
+                android:text="@string/have_account"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 
@@ -171,7 +170,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:text="Log In"
+                android:text="@string/signin_button"
                 android:textSize="14sp" />
 
 

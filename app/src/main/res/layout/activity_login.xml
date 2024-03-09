@@ -41,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:text="Login"
+            android:text="@string/login_title"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="50sp" />
@@ -52,7 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
-            android:hint="Email"
+            android:hint="@string/email_box"
             android:textColorHint="@color/black"
             app:boxStrokeColor="@color/black">
 
@@ -71,7 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="Password"
+            android:hint="@string/password_box"
             android:textColorHint="@color/black"
             app:boxStrokeColor="@color/black"
             app:passwordToggleEnabled="true">
@@ -107,7 +107,7 @@
                 android:paddingTop="10dp"
                 android:paddingEnd="20dp"
                 android:paddingBottom="20dp"
-                android:text="Sign In"
+                android:text="@string/signin_button"
                 app:cornerRadius="10dp" />
 
         </FrameLayout>
@@ -122,7 +122,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Don't Have an Account ?"
+                android:text="@string/create_account"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 
@@ -131,7 +131,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:text="Sign Up"
+                android:text="@string/link_create"
                 android:textSize="14sp" />
 
         </LinearLayout>
