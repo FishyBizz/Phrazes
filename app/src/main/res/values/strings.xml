@@ -1,14 +1,3 @@
 <resources>
     <string name="app_name">Phrazes</string>
-    <string name="login_title">Login</string>
-    <string name="email_box">Email</string>
-    <string name="password_box">Password</string>
-    <string name="signin_button">Sign In</string>
-    <string name="create_account">Don\'t Have an Account ?</string>
-    <string name="link_create">Sign Up</string>
-    <string name="title_sign_up">Sign Up</string>
-    <string name="name_box">Name</string>
-    <string name="confirm_box">Confirm Password</string>
-    <string name="sign_up_button">Sign Up</string>
-    <string name="have_account">Already have an Account ?</string>
 </resources>

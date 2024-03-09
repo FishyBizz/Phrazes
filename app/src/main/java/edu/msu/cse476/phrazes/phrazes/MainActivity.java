@@ -18,4 +18,24 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    public void onStartHowToPlay(View view) {
+        Intent intent = new Intent(this, HowToPlayActivity.class);
+        startActivity(intent);
+    }
+
+    public void onStartGame(View view) {
+        Intent intent = new Intent(this, GameActivity.class);
+        startActivity(intent);
+    }
+
+    public void onStartDownload_Categories(View view) {
+        Intent intent = new Intent(this, DownloadCategoriesActivity.class);
+        startActivity(intent);
+    }
+
+    public void onStartCreateCategory(View view) {
+        Intent intent = new Intent(this, CreateCategoryActivity.class);
+        startActivity(intent);
+    }
 }

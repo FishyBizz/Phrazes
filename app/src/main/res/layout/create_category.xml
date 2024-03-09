@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateCategoryActivity"
+    android:paddingBottom= "16dp"
+    android:paddingLeft= "16dp"
+    android:paddingRight= "16dp"
+    android:paddingTop= "32dp"
+ >
+
+    <TextView
+        android:id="@+id/CreateCategoryTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Create Category"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/CreateCategoryPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:paddingTop= "16dp"
+        android:layout_below="@+id/CreateCategoryTitle"
+        android:text="Type in a name for your custom deck below" />
+
+
+    <EditText
+        android:id="@+id/categoryName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CreateCategoryPrompt"
+        android:layout_centerHorizontal="true"
+        android:hint="Name of Category for Custom Deck"
+        android:paddingTop= "16dp"
+        android:inputType="textNoSuggestions"
+        />
+
+    <Button
+        android:id="@+id/createDeckButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/categoryName"
+        android:layout_centerInParent="true"
+        android:text="Create Deck"
+        android:backgroundTint="@color/black"/>
+</RelativeLayout>
