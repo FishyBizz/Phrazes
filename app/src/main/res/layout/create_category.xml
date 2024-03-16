@@ -4,12 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateCategoryActivity"
-    android:paddingBottom= "16dp"
-    android:paddingLeft= "16dp"
-    android:paddingRight= "16dp"
-    android:paddingTop= "32dp"
- >
+    android:paddingStart="16dp"
+    android:paddingTop="32dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="16dp"
+    tools:context=".CreateCategoryActivity">
 
     <TextView
         android:id="@+id/CreateCategoryTitle"
@@ -17,18 +16,17 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="Create Category"
+        android:text="@string/create_title"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/CreateCategoryPrompt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:paddingTop= "16dp"
+        android:paddingTop="16dp"
         android:layout_below="@+id/CreateCategoryTitle"
-        android:text="Type in a name for your custom deck below" />
+        android:text="@string/create_prompt" />
 
 
     <EditText
@@ -37,10 +35,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/CreateCategoryPrompt"
         android:layout_centerHorizontal="true"
-        android:hint="Name of Category for Custom Deck"
-        android:paddingTop= "16dp"
+        android:hint="@string/create_box_text"
         android:inputType="textNoSuggestions"
-        />
+        android:paddingTop="16dp" />
 
     <Button
         android:id="@+id/createDeckButton"
@@ -48,6 +45,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/categoryName"
         android:layout_centerInParent="true"
-        android:text="Create Deck"
-        android:backgroundTint="@color/black"/>
+        android:backgroundTint="@color/black"
+        android:text="@string/create_button" />
+
+    <Button
+        android:id="@+id/create_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/black"
+        android:text="@string/back_button" />
 </RelativeLayout>

@@ -43,11 +43,11 @@ public class LoginActivity extends AppCompatActivity {
         //THIS WAS KEEPING THE USER LOGGED ON EVEN WHEN USER WAS DISABLED
         //PROBABLY SHOULD DELETE
         // Check if user is already signed in
-        //FirebaseUser currentUser = mAuth.getCurrentUser();
-        //if (currentUser != null) {
-        // User is signed in
-        //    navigateToGameActivity();
-        //}
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null) {
+            //User is signed in
+            navigateToMainMenu();
+        }
 
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,7 +78,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             FirebaseUser user = mAuth.getCurrentUser();
-                            navigateToGameActivity();
+                            navigateToMainMenu();
                         } else {
                             // Sign on fails
                             Toast.makeText(LoginActivity.this, "Authentication Failed.",
@@ -88,8 +88,8 @@ public class LoginActivity extends AppCompatActivity {
                 });
     }
 
-    private void navigateToGameActivity() {
-        Intent intent = new Intent(LoginActivity.this, GameActivity.class);
+    private void navigateToMainMenu() {
+        Intent intent = new Intent(LoginActivity.this, MainMenu.class);
         startActivity(intent);
         finish(); // Call finish to remove this activity from the activity stack.
     }

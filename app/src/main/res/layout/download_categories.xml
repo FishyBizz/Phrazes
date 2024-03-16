@@ -8,30 +8,39 @@
     android:paddingBottom="16dp"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    android:paddingTop="16dp"
->
+    android:paddingTop="16dp">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Download Decks"
         android:id="@+id/DownloadCategoriesTitle"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Below are Category Decks from our very own remote server. Click on any of the decks below and they will be downloaded to your devices local save."
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/downloads_title"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
         android:id="@+id/DownloadCategoriesPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/DownloadCategoriesTitle"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:text="@string/download_prompt" />
 
     <ListView
+        android:id="@+id/DownloadDeckList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/DownloadDeckList"
         android:layout_below="@+id/DownloadCategoriesPrompt"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="64dp"/>
+
+    <Button
+        android:id="@+id/download_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/black"
+        android:text="@string/back_button" />
 </RelativeLayout>

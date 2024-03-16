@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="Settings"
+        android:text="@string/settings_title"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3" />
 
     <TextView
@@ -25,20 +25,37 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/SettingsTitle"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
         android:paddingTop="24dp"
-        android:paddingLeft= "10dp"
-        android:text="Number of Rounds:"
+        android:text="@string/rounds"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@android:color/black" />
 
     <Spinner
         android:id="@+id/TimeLimits"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_alignTop="@id/TimeLimitText"
+        android:layout_toEndOf="@id/TimeLimitText"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_toRightOf="@id/TimeLimitText"
         android:paddingTop="24dp" />
+
+    <!-- Log Out Button -->
+    <Button
+        android:id="@+id/logout_button"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_above="@id/settings_back"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/red"
+        android:text="@string/logout_button" />
+
+    <Button
+        android:id="@+id/settings_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/black"
+        android:text="@string/back_button" />
 </RelativeLayout>

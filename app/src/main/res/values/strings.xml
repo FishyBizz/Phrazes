@@ -1,3 +1,39 @@
 <resources>
     <string name="app_name">Phrazes</string>
+    <string name="login_title">Login</string>
+    <string name="email_box">Email</string>
+    <string name="password_box">Password</string>
+    <string name="signin_button">Sign In</string>
+    <string name="create_account">Don\'t Have an Account ?</string>
+    <string name="link_create">Sign Up</string>
+    <string name="title_sign_up">Sign Up</string>
+    <string name="name_box">Name</string>
+    <string name="confirm_box">Confirm Password</string>
+    <string name="sign_up_button">Sign Up</string>
+    <string name="have_account">Already have an Account ?</string>
+    <string name="play_button">Play!</string>
+    <string name="download_button">Download Categories</string>
+    <string name="create_cat">Create Categories</string>
+    <string name="how_to_play">How to Play</string>
+    <string name="settings_button">Settings</string>
+    <string name="back_button">Go Back to Menu</string>
+    <string name="settings_title">Settings</string>
+    <string name="rounds">Number of Rounds:</string>
+    <string name="downloads_title">Download Lists</string>
+    <string name="download_prompt">Below are Category Lists from our very own remote server. Click on any of the lists below and they will be downloaded to your devices local save.</string>
+    <string name="create_title">Create Category</string>
+    <string name="create_prompt">Type in a name for your custom word list below.</string>
+    <string name="create_box_text">Name of Category for Custom List</string>
+    <string name="create_button">Create List</string>
+    <string name="rules_title">How to Play Phrazes</string>
+    <string name="rules_text">Phrazes is similar to other game you might have played such as Catchphrases and Headsup mixed in with hot-potato. During each teams turn, a word will be displayed to ONE member of the corresponding team. Make sure this person is holding the device in a way that other members of his team can\'t see the word being displayed. This individual can make any physical gesture and give any verbal clue to get your team to say the word, however the verbal clue can\'t include ANY part of the word or a word that rhymes. For each round there is a timer, and when the timer reaches 0 seconds, the device \'blows up\', giving the other team a point for the round. Whichever team that has the most points at the end of the game wins!</string>
+    <string name="logout_button">Log Out</string>
+
+
+    <string-array name="number_of_rounds">
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
 </resources>
