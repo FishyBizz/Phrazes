@@ -1,5 +1,8 @@
 package edu.msu.cse476.phrazes.phrazes;
 
+/**
+ * WordSet is a class that encapsulates all of the data in each WORDSET
+ */
 public class WordSet {
     private String[] wordArray;
     private boolean isOnline;

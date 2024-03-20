@@ -11,6 +11,9 @@ import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 
+/**
+ * GAMEACTIVITY IS THE MAIN LOGIC FOR THE GAMEPLAY
+ */
 public class GameActivity extends AppCompatActivity {
 
     @Override
