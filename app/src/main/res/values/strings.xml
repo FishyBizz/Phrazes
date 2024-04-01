@@ -29,12 +29,24 @@
     <string name="rules_title">How to Play Phrazes</string>
     <string name="rules_text">Phrazes is similar to other game you might have played such as Catchphrases and Headsup mixed in with hot-potato. During each teams turn, a word will be displayed to ONE member of the corresponding team. Make sure this person is holding the device in a way that other members of his team can\'t see the word being displayed. This individual can make any physical gesture and give any verbal clue to get your team to say the word, however the verbal clue can\'t include ANY part of the word or a word that rhymes. For each round there is a timer, and when the timer reaches 0 seconds, the device \'blows up\', giving the other team a point for the round. Whichever team that has the most points at the end of the game wins!</string>
     <string name="logout_button">Log Out</string>
+    <string name="AddCardsTitle">Editing Category:</string>
+    <string name="CategoryName">Name of Category</string>
+    <string name="CardTitle">Card Title</string>
+    <string name="Upload">Upload Deck</string>
+    <string name="AddCard">Add</string>
+    <string name="DisplayCard">Title of the Card</string>
+    <string name="correct">"Correct "</string>
+    <string name="Pass">Pass</string>
+    <string name="RoundNumberHeading">"Round Number: "</string>
+    <string name="RoundNumber">Round Currently On</string>
+    <string name="Timer">"Timer: "</string>
+    <string name="TimeLeft">Time Left in Round</string>
+    <string name="CardsAddedHeading">Cards Added (Max 60):</string>
 
 
     <string-array name="number_of_rounds">
+        <item>1</item>
         <item>3</item>
-        <item>4</item>
         <item>5</item>
-        <item>6</item>
     </string-array>
 </resources>

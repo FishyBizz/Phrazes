@@ -11,6 +11,7 @@ import android.view.View;
 public class CreateCategoryActivity extends AppCompatActivity {
 
     private Button backButton;
+    private Button createButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +19,7 @@ public class CreateCategoryActivity extends AppCompatActivity {
         setContentView(R.layout.create_category);
 
         backButton = findViewById(R.id.create_back);
+        createButton = findViewById(R.id.createDeckButton);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,5 +32,10 @@ public class CreateCategoryActivity extends AppCompatActivity {
                 startActivity(buttonIntent);
             }
         });
+    }
+
+    public void OnStartAddCards(View view){
+        Intent intent = new Intent(this, AddCards.class);
+        startActivity(intent);
     }
 }
