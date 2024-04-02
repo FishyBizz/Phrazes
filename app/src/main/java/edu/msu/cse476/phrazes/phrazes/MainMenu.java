@@ -14,11 +14,6 @@ public class MainMenu extends AppCompatActivity {
         setContentView(R.layout.activity_main_menu);
     }
 
-    public void onStartGame(View view) {
-        Intent intent = new Intent(this, GameActivity.class);
-        startActivity(intent);
-    }
-
     public void onStartDownload_Categories(View view) {
         Intent intent = new Intent(this, DownloadCategoriesActivity.class);
         startActivity(intent);
@@ -36,6 +31,11 @@ public class MainMenu extends AppCompatActivity {
 
     public void onStartSettings(View view) {
         Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
+    public void onStartChooseDeck(View view) {
+        Intent intent = new Intent(this, ChooseDeck.class);
         startActivity(intent);
     }
 }

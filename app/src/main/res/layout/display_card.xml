@@ -25,23 +25,6 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <TextView
-        android:id="@+id/TimerTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/RoundNumber"
-        android:text="@string/Timer"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-    <TextView
-        android:id="@+id/Timer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/RoundNumber"
-        android:layout_toRightOf="@id/TimerTitle"
-        android:text="@string/TimeLeft"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-    <TextView
         android:id="@+id/addCardsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -62,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:layout_weight="1"
-            android:background="@color/red"
+            android:backgroundTint="@color/red"
             android:text="@string/Pass" />
 
         <Button
@@ -70,7 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/green"
+            android:backgroundTint="@color/green"
             android:text="@string/correct" />
 
     </LinearLayout>

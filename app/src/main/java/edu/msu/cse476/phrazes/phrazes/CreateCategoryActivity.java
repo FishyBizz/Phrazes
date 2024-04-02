@@ -19,7 +19,6 @@ public class CreateCategoryActivity extends AppCompatActivity {
         setContentView(R.layout.create_category);
 
         backButton = findViewById(R.id.create_back);
-        createButton = findViewById(R.id.createDeckButton);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,6 +31,8 @@ public class CreateCategoryActivity extends AppCompatActivity {
                 startActivity(buttonIntent);
             }
         });
+
+        createButton = findViewById(R.id.createDeckButton);
 
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
