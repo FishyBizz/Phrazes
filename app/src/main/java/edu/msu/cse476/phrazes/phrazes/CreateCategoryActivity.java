@@ -32,10 +32,15 @@ public class CreateCategoryActivity extends AppCompatActivity {
                 startActivity(buttonIntent);
             }
         });
+
+        createButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent buttonIntent = new Intent(CreateCategoryActivity.this,
+                        AddCards.class);
+                startActivity(buttonIntent);
+            }
+        });
     }
 
-    public void OnStartAddCards(View view){
-        Intent intent = new Intent(this, AddCards.class);
-        startActivity(intent);
-    }
 }

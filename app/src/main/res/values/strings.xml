@@ -42,6 +42,7 @@
     <string name="Timer">"Timer: "</string>
     <string name="TimeLeft">Time Left in Round</string>
     <string name="CardsAddedHeading">Cards Added (Max 60):</string>
+    <string name="choose_category">Choose a Category (must be already downloaded):</string>
 
 
     <string-array name="number_of_rounds">
