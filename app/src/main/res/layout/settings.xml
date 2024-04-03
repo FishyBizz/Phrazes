@@ -57,5 +57,5 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:backgroundTint="@color/black"
-        android:text="@string/back_button" />
+        android:text="@string/back_menu_button" />
 </RelativeLayout>

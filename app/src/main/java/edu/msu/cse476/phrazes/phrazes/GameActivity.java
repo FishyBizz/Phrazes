@@ -2,6 +2,7 @@ package edu.msu.cse476.phrazes.phrazes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import java.util.HashSet;
@@ -16,27 +17,36 @@ import java.util.TimerTask;
  */
 public class GameActivity extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game);
-    }
-
     private int redScore = 0;
     private int blueScore = 0;
     private char winningTeam;
     private WordSet wordSet;
     private Timer timer;
     private int numRounds;
-
     private Set<String> usedWords;
 
-    public GameActivity(int numRounds) {
-        this.wordSet = new WordSet(); // Assuming WordSet has a default constructor
-        this.numRounds = numRounds;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_game);
 
+        /**
+         * Initialize word list variables
+         */
+        this.wordSet = new WordSet(); // Assuming WordSet has a default constructor
         // Additional setup code if needed
         usedWords = new HashSet<>();
+
+        /**
+         * Initialize the number of rounds to be played (from Settings - SharedPreferences)
+         */
+        SharedPreferences prefs = getSharedPreferences("AppSettings", MODE_PRIVATE);
+        int savedPosition = prefs.getInt("SpinnerSelection", 1);
+
+        // Get the array
+        String[] roundsArray = getResources().getStringArray(R.array.number_of_rounds);
+
+        numRounds = Integer.parseInt(roundsArray[savedPosition]);
 
         setupGameTimer();
     }

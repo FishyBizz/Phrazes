@@ -40,8 +40,6 @@ public class LoginActivity extends AppCompatActivity {
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
-        //THIS WAS KEEPING THE USER LOGGED ON EVEN WHEN USER WAS DISABLED
-        //PROBABLY SHOULD DELETE
         // Check if user is already signed in
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {

@@ -17,7 +17,7 @@
     <string name="create_cat">Create Categories</string>
     <string name="how_to_play">How to Play</string>
     <string name="settings_button">Settings</string>
-    <string name="back_button">Go Back to Menu</string>
+    <string name="back_menu_button">Go Back to Menu</string>
     <string name="settings_title">Settings</string>
     <string name="rounds">Number of Rounds:</string>
     <string name="downloads_title">Download Lists</string>
@@ -43,6 +43,7 @@
     <string name="TimeLeft">Time Left in Round</string>
     <string name="CardsAddedHeading">Cards Added (Max 60):</string>
     <string name="choose_category">Choose a Category (must be already downloaded):</string>
+    <string name="back_screen_button">Back</string>
 
 
     <string-array name="number_of_rounds">

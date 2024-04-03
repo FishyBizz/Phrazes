@@ -3,6 +3,7 @@ package edu.msu.cse476.phrazes.phrazes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -33,6 +34,13 @@ public class SettingsActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Save the spinner selection
+                int selectedPosition = roundSpinner.getSelectedItemPosition();
+                getSharedPreferences("AppSettings", MODE_PRIVATE)
+                        .edit()
+                        .putInt("SpinnerSelection", selectedPosition)
+                        .apply();
+
                 Intent buttonIntent = new Intent(SettingsActivity.this,
                         MainMenu.class);
                 // Clear other activities on top of MainMenu
@@ -48,10 +56,10 @@ public class SettingsActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         roundSpinner.setAdapter(adapter);
 
-        // Default Rounds Spinner Value
-        String defaultValue = "3";
-        int spinnerPos = adapter.getPosition(defaultValue);
-        roundSpinner.setSelection(spinnerPos);
+        // Get the saved spinner selection
+        SharedPreferences prefs = getSharedPreferences("AppSettings", MODE_PRIVATE);
+        int savedPosition = prefs.getInt("SpinnerSelection", 1); // default to 3
+        roundSpinner.setSelection(savedPosition);
 
         // Logout of the Game
         Button logout = findViewById(R.id.logout_button);
@@ -73,6 +81,5 @@ public class SettingsActivity extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 }

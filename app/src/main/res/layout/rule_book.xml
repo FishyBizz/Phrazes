@@ -31,5 +31,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/black"
-        android:text="@string/back_button" />
+        android:text="@string/back_menu_button" />
 </LinearLayout>

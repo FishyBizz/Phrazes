@@ -6,12 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
+import android.widget.EditText;
 
 
 public class CreateCategoryActivity extends AppCompatActivity {
 
     private Button backButton;
     private Button createButton;
+    private EditText categoryNameEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,7 @@ public class CreateCategoryActivity extends AppCompatActivity {
         setContentView(R.layout.create_category);
 
         backButton = findViewById(R.id.create_back);
+        categoryNameEditText = findViewById(R.id.categoryName); // User created name
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,8 +40,16 @@ public class CreateCategoryActivity extends AppCompatActivity {
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Get the user category name
+                String categoryName = categoryNameEditText.getText().toString();
+
+                // Start AddCards activity
                 Intent buttonIntent = new Intent(CreateCategoryActivity.this,
                         AddCards.class);
+
+                // Category name added to intent
+                buttonIntent.putExtra("CategoryName", categoryName);
+
                 startActivity(buttonIntent);
             }
         });
