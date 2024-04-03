@@ -21,7 +21,7 @@ public class CountDown extends AppCompatActivity {
     }
 
     private void startCountDownTimer(){
-        timer = new CountDownTimer(6000, 1000) { // Countdown from 5 seconds with 1-second intervals
+        timer = new CountDownTimer(6000, 1000) { // Countdown from 6 seconds with 1 second intervals
             @Override
             public void onTick(long millisUntilFinished) {
                 long secondsLeft = millisUntilFinished / 1000;
@@ -29,8 +29,7 @@ public class CountDown extends AppCompatActivity {
             }
             @Override
             public void onFinish() {
-                countdownTextView.setText("Countdown finished!");
-                // Perform any action you want to do after the countdown finishes
+                countdownTextView.setText("Game Starting!");
                 Intent intent = new Intent(CountDown.this, GameActivity.class);
                 startActivity(intent);
             }
