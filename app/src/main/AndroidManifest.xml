@@ -16,6 +16,9 @@
             android:name=".MainMenu"
             android:exported="false" />
         <activity
+            android:name=".CountDown"
+            android:exported="false" />
+        <activity
             android:name=".SettingsActivity"
             android:exported="false" />
         <activity
@@ -32,6 +35,9 @@
             android:exported="false" />
         <activity
             android:name=".GameActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChooseTeam"
             android:exported="false" />
         <activity
             android:name=".ChooseDeck"

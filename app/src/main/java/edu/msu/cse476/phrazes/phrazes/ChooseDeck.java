@@ -19,7 +19,7 @@ public class ChooseDeck extends AppCompatActivity {
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent buttonIntent = new Intent(ChooseDeck.this, GameActivity.class);
+                Intent buttonIntent = new Intent(ChooseDeck.this, ChooseTeam.class);
                 startActivity(buttonIntent);
             }
         });
