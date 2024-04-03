@@ -35,7 +35,7 @@
     <string name="Upload">Save / Upload Deck</string>
     <string name="AddCard">Add</string>
     <string name="DisplayCard">Displayed word!</string>
-    <string name="correct">"Correct "</string>
+    <string name="correct">Correct</string>
     <string name="Pass">Pass</string>
     <string name="RoundNumberHeading">"Round Number: "</string>
     <string name="RoundNumber">Round Currently On</string>
