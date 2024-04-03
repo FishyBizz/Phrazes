@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class CreateCategoryActivity extends AppCompatActivity {
@@ -41,18 +42,22 @@ public class CreateCategoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Get the user category name
-                String categoryName = categoryNameEditText.getText().toString();
+                String categoryName = categoryNameEditText.getText().toString().trim();
 
-                // Start AddCards activity
-                Intent buttonIntent = new Intent(CreateCategoryActivity.this,
-                        AddCards.class);
+                if(categoryName.isEmpty()) {
+                    Toast.makeText(CreateCategoryActivity.this, "Please enter a " +
+                            "category name.", Toast.LENGTH_LONG).show();
+                } else {
+                    // Start AddCards activity
+                    Intent buttonIntent = new Intent(CreateCategoryActivity.this,
+                            AddCards.class);
 
-                // Category name added to intent
-                buttonIntent.putExtra("CategoryName", categoryName);
+                    // Category name added to intent
+                    buttonIntent.putExtra("CategoryName", categoryName);
 
-                startActivity(buttonIntent);
+                    startActivity(buttonIntent);
+                }
             }
         });
     }
-
 }
