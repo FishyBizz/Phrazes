@@ -45,6 +45,7 @@
     <string name="choose_category">Choose a Category (must be already downloaded):</string>
     <string name="back_screen_button">Back</string>
     <string name="start_countdown">Start Countdown!</string>
+    <string name="dummy">Dummy Text</string>
 
 
     <string-array name="number_of_rounds">

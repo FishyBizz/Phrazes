@@ -14,9 +14,11 @@ public class ChooseTeam extends AppCompatActivity {
     private char chosen;
     private Random random;
     private char[] teams = {'r', 'b'};
-    private int index;
     private TextView teamchosen;
     View layout;
+    private String red_first = "Red team has been selected to go first!";
+    private String blue_first = "Blue team has been selected to go first!";
+    private static final String KEY_SELECTED_TEAM = "selected_team";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,17 +27,35 @@ public class ChooseTeam extends AppCompatActivity {
         layout = findViewById(R.id.TeamChoseLayout);
 
         random = new Random();
-        index = random.nextInt(2);
-        chosen = teams[index];
-        if (chosen == 'r'){
-            teamchosen.setText("Red team is selected to go first!");
-            layout.setBackgroundColor(Color.RED);
-        } else{
-            teamchosen.setText("Blue team is selected to go first!");
-            layout.setBackgroundColor(Color.BLUE);
+        if (savedInstanceState != null) {
+            // Restore the selected team if savedInstanceState is not null
+            chosen = savedInstanceState.getChar(KEY_SELECTED_TEAM, teams[random.nextInt(2)]);
+        } else {
+            chosen = teams[random.nextInt(2)];
         }
 
+        updateUI();
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        // Save the selected team when the activity is about to be destroyed
+        outState.putChar(KEY_SELECTED_TEAM, chosen);
+        super.onSaveInstanceState(outState);
+    }
+
+    private void updateUI() {
+        if (chosen == 'r') {
+            teamchosen.setText(red_first);
+            teamchosen.setTextColor(Color.YELLOW);
+            layout.setBackgroundColor(Color.RED);
+        } else {
+            teamchosen.setText(blue_first);
+            teamchosen.setTextColor(Color.YELLOW);
+            layout.setBackgroundColor(Color.BLUE);
+        }
+    }
+
     public void onStartCountDown(View view) {
         Intent intent = new Intent(this, CountDown.class);
         startActivity(intent);
