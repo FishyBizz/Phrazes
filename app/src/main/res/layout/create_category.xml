@@ -46,7 +46,6 @@
         android:layout_below="@+id/categoryName"
         android:layout_centerInParent="true"
         android:backgroundTint="@color/black"
-        android:onClick="OnStartAddCards"
         android:text="@string/create_button" />
 
     <Button

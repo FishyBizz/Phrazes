@@ -16,8 +16,6 @@ public class ChooseTeam extends AppCompatActivity {
     private char[] teams = {'r', 'b'};
     private TextView teamchosen;
     View layout;
-    private String red_first = "Red team has been selected to go first!";
-    private String blue_first = "Blue team has been selected to go first!";
     private static final String KEY_SELECTED_TEAM = "selected_team";
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,11 +44,11 @@ public class ChooseTeam extends AppCompatActivity {
 
     private void updateUI() {
         if (chosen == 'r') {
-            teamchosen.setText(red_first);
+            teamchosen.setText(getString(R.string.red_first));
             teamchosen.setTextColor(Color.YELLOW);
             layout.setBackgroundColor(Color.RED);
         } else {
-            teamchosen.setText(blue_first);
+            teamchosen.setText(getString(R.string.blue_first));
             teamchosen.setTextColor(Color.YELLOW);
             layout.setBackgroundColor(Color.BLUE);
         }

@@ -46,6 +46,10 @@
     <string name="back_screen_button">Back</string>
     <string name="start_countdown">Start Countdown!</string>
     <string name="dummy">Dummy Text</string>
+    <string name="countdown_format">Game starts in %1$d seconds</string>
+    <string name="game_starting">Game Starting!</string>
+    <string name="red_first">Red team has been selected to go first!</string>
+    <string name="blue_first">Blue team has been selected to go first!</string>
 
 
     <string-array name="number_of_rounds">

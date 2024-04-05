@@ -25,11 +25,11 @@ public class CountDown extends AppCompatActivity {
             @Override
             public void onTick(long millisUntilFinished) {
                 long secondsLeft = millisUntilFinished / 1000;
-                countdownTextView.setText("Game starts in " + secondsLeft + " seconds");
+                countdownTextView.setText(getString(R.string.countdown_format, secondsLeft));
             }
             @Override
             public void onFinish() {
-                countdownTextView.setText("Game Starting!");
+                countdownTextView.setText(getString(R.string.game_starting));
                 Intent intent = new Intent(CountDown.this, GameActivity.class);
                 startActivity(intent);
             }
