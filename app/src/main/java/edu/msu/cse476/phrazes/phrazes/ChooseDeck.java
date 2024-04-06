@@ -30,10 +30,6 @@ public class ChooseDeck extends AppCompatActivity {
         dbHelper = new DatabaseHelper(this);
 
         ArrayList<String> categoryNames = getCategoryNames();
-        for (String categoryName : categoryNames) {
-            ArrayList<String> cards = getCardsForCategory(categoryName);
-            tableNames.addAll(cards);
-        }
 
         // Create the ArrayAdapter and set it to the ListView
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, categoryNames);
@@ -55,7 +51,7 @@ public class ChooseDeck extends AppCompatActivity {
             do {
                 @SuppressLint("Range") String tableName = cursor.getString(cursor.getColumnIndex("name"));
                 // Exclude system tables and views, if necessary
-                if (!tableName.equals("sqlite_sequence") && !tableName.equals("android_metadata")) {
+                if (!tableName.equals("sqlite_sequence") && !tableName.equals("android_metadata") && !tableName.equals("cards")) {
                     categoryNames.add(tableName);
                 }
             } while (cursor.moveToNext());

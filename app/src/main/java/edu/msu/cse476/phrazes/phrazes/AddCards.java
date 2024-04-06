@@ -81,20 +81,19 @@ public class AddCards extends AppCompatActivity {
             }
         });
 
-        saveButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Create a table with the name specified in categoryName
-                String createTableQuery = "CREATE TABLE IF NOT EXISTS " + categoryName + " (" +
-                        DatabaseContract.CardEntry._ID + " INTEGER PRIMARY KEY," +
-                        DatabaseContract.CardEntry.COLUMN_CONTENT + " TEXT)";
+    }
+    public void onSave(View v) {
+        // Create a table with the name specified in categoryName
+        DatabaseContract.setTableName(categoryNameTextView.getText().toString());
+        String createTableQuery = "CREATE TABLE IF NOT EXISTS " + DatabaseContract.getTableName() + " (" +
+                DatabaseContract.CardEntry._ID + " INTEGER PRIMARY KEY," +
+                DatabaseContract.CardEntry.COLUMN_CONTENT + " TEXT)";
 
-                database.execSQL(createTableQuery);
-                for (String card : itemList) {
-                    ContentValues values = new ContentValues();
-                    values.put(DatabaseContract.CardEntry.COLUMN_CONTENT, card);
-                }
-            }
-        });
+        database.execSQL(createTableQuery);
+        for (String card : itemList) {
+            ContentValues values = new ContentValues();
+            values.put(DatabaseContract.CardEntry.COLUMN_CONTENT, card);
+        }
+        Toast.makeText(AddCards.this, "Cards saved successfully", Toast.LENGTH_SHORT).show();
     }
 }

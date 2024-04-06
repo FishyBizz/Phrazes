@@ -60,6 +60,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/black"
         android:layout_above="@+id/category_back"
+        android:onClick="onSave"
         android:text="@string/Save"/>
     <Button
         android:id="@+id/uploadButton"
