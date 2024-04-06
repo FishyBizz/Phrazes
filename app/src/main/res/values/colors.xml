@@ -5,4 +5,8 @@
     <color name="red">#FF0000</color>
     <color name="green">#00FF00</color>
     <color name="main_background">#3C5368</color>
+    <color name="secondary_background">#161F29</color>
+    <color name="white_background">#F6F6EB</color>
+
+
 </resources>
