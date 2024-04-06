@@ -32,7 +32,8 @@
     <string name="AddCardsTitle">Editing Category:</string>
     <string name="CategoryName">Name of Category</string>
     <string name="CardTitle">Enter word for the category</string>
-    <string name="Upload">Save / Upload Deck</string>
+    <string name="Upload">Upload Deck</string>
+    <string name="Save">Save Deck</string>
     <string name="AddCard">Add</string>
     <string name="DisplayCard">Displayed word!</string>
     <string name="correct">Correct</string>

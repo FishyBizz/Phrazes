@@ -1,5 +1,6 @@
 package edu.msu.cse476.phrazes.phrazes;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.database.sqlite.SQLiteDatabase;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,10 +20,13 @@ public class AddCards extends AppCompatActivity {
     private EditText itemText;
     private Button addButton;
     private Button backButton;
+    private Button saveButton;
+    private Button uploadButton;
     private ListView cardsListView;
     private ArrayAdapter<String> adapter;
     private ArrayList<String> itemList;
     private TextView categoryNameTextView;
+    private SQLiteDatabase database;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +35,8 @@ public class AddCards extends AppCompatActivity {
         itemText = findViewById(R.id.itemText);
         addButton = findViewById(R.id.addButton);
         backButton = findViewById(R.id.category_back);
+        saveButton = findViewById(R.id.saveButton);
+        saveButton = findViewById(R.id.uploadButton);
         cardsListView = findViewById(R.id.cardsListView);
         categoryNameTextView = findViewById(R.id.CategoryName);
 
@@ -42,6 +49,8 @@ public class AddCards extends AppCompatActivity {
 
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, itemList);
         cardsListView.setAdapter(adapter);
+        DatabaseHelper dbHelper = new DatabaseHelper(this);
+        database = dbHelper.getWritableDatabase();
 
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +78,22 @@ public class AddCards extends AppCompatActivity {
                 buttonIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP |
                         Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(buttonIntent);
+            }
+        });
+
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create a table with the name specified in categoryName
+                String createTableQuery = "CREATE TABLE IF NOT EXISTS " + categoryName + " (" +
+                        DatabaseContract.CardEntry._ID + " INTEGER PRIMARY KEY," +
+                        DatabaseContract.CardEntry.COLUMN_CONTENT + " TEXT)";
+
+                database.execSQL(createTableQuery);
+                for (String card : itemList) {
+                    ContentValues values = new ContentValues();
+                    values.put(DatabaseContract.CardEntry.COLUMN_CONTENT, card);
+                }
             }
         });
     }
