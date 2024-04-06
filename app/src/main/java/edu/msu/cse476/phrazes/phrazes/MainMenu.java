@@ -24,6 +24,11 @@ public class MainMenu extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onStartViewCategory(View view) {
+        Intent intent = new Intent(this, ViewCategories.class);
+        startActivity(intent);
+    }
+
     public void onStartHowToPlay(View view) {
         Intent intent = new Intent(this, HowToPlayActivity.class);
         startActivity(intent);
