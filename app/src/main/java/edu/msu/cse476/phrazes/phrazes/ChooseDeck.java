@@ -30,10 +30,6 @@ public class ChooseDeck extends AppCompatActivity {
         dbHelper = new DatabaseHelper(this);
 
         ArrayList<String> categoryNames = getCategoryNames();
-        for (String categoryName : categoryNames) {
-            ArrayList<String> cards = getCardsForCategory(categoryName);
-            tableNames.addAll(cards);
-        }
 
         // Create the ArrayAdapter and set it to the ListView
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, categoryNames);
@@ -63,19 +59,5 @@ public class ChooseDeck extends AppCompatActivity {
         cursor.close();
         db.close();
         return categoryNames;
-    }
-    private ArrayList<String> getCardsForCategory(String categoryName) {
-        ArrayList<String> cards = new ArrayList<>();
-        SQLiteDatabase db = dbHelper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT content FROM " + categoryName, null);
-        if (cursor.moveToFirst()) {
-            do {
-                @SuppressLint("Range") String card = cursor.getString(cursor.getColumnIndex("content"));
-                cards.add(card);
-            } while (cursor.moveToNext());
-        }
-        cursor.close();
-        db.close();
-        return cards;
     }
 }

@@ -85,8 +85,10 @@ public class AddCards extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Create a table with the name specified in categoryName
-                String createTableQuery = "CREATE TABLE IF NOT EXISTS " + categoryName + " (" +
+                DatabaseContract.CardEntry.TABLE_NAME = categoryName;
+                String createTableQuery = "CREATE TABLE IF NOT EXISTS " + DatabaseContract.CardEntry.TABLE_NAME + " (" +
                         DatabaseContract.CardEntry._ID + " INTEGER PRIMARY KEY," +
+                        DatabaseContract.CardEntry.COLUMN_CATEGORY + " TEXT," +
                         DatabaseContract.CardEntry.COLUMN_CONTENT + " TEXT)";
 
                 database.execSQL(createTableQuery);

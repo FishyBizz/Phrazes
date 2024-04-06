@@ -6,12 +6,11 @@ public final class DatabaseContract {
     private DatabaseContract() {}
 
     public static class CardEntry implements BaseColumns {
-        public static final String TABLE_NAME = "cards";
-        public static final String COLUMN_CATEGORY = "category";
-        public static final String COLUMN_CONTENT = "content";
+        public static String TABLE_NAME = null;
+        public static final String COLUMN_CATEGORY = null;
+        public static final String COLUMN_CONTENT = null;
     }
 
-    // SQL commands for creating and deleting the table
     public static final String SQL_CREATE_TABLE_CARDS =
             "CREATE TABLE " + CardEntry.TABLE_NAME + " (" +
                     CardEntry._ID + " INTEGER PRIMARY KEY," +
