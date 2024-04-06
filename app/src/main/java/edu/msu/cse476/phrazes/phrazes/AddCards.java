@@ -36,7 +36,7 @@ public class AddCards extends AppCompatActivity {
         addButton = findViewById(R.id.addButton);
         backButton = findViewById(R.id.category_back);
         saveButton = findViewById(R.id.saveButton);
-        saveButton = findViewById(R.id.uploadButton);
+        uploadButton = findViewById(R.id.uploadButton);
         cardsListView = findViewById(R.id.cardsListView);
         categoryNameTextView = findViewById(R.id.CategoryName);
 
@@ -86,7 +86,8 @@ public class AddCards extends AppCompatActivity {
             public void onClick(View v) {
                 // Create a table with the name specified in categoryName
                 DatabaseContract.CardEntry.TABLE_NAME = categoryName;
-                String createTableQuery = "CREATE TABLE IF NOT EXISTS " + DatabaseContract.CardEntry.TABLE_NAME + " (" +
+                String createTableQuery = "CREATE TABLE IF NOT EXISTS " +
+                        DatabaseContract.CardEntry.TABLE_NAME + " (" +
                         DatabaseContract.CardEntry._ID + " INTEGER PRIMARY KEY," +
                         DatabaseContract.CardEntry.COLUMN_CATEGORY + " TEXT," +
                         DatabaseContract.CardEntry.COLUMN_CONTENT + " TEXT)";

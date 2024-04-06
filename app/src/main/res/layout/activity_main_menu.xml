@@ -48,6 +48,15 @@
         android:onClick="onStartCreateCategory"
         android:text="@string/create_cat" />
 
+    <Button
+        android:id="@+id/viewCategoriesButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/black"
+        android:onClick="onStartViewCategory"
+        android:text="@string/view_cat" />
+
     <!-- How to Play Button -->
     <Button
         android:id="@+id/howToPlayButton"
