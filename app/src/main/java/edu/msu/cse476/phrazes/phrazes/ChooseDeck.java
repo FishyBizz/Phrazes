@@ -28,7 +28,6 @@ public class ChooseDeck extends AppCompatActivity {
         playButton = findViewById(R.id.PlayGameButton);
         categoryList = findViewById(R.id.categoryList);
         dbHelper = new DatabaseHelper(this);
-        tableNames = new ArrayList<>();
 
         ArrayList<String> categoryNames = getCategoryNames();
         for (String categoryName : categoryNames) {
