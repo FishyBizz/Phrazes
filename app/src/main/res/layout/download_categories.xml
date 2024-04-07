@@ -8,7 +8,8 @@
     android:paddingBottom="16dp"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    android:paddingTop="16dp">
+    android:paddingTop="16dp"
+    android:background="@color/main_background">
 
     <TextView
         android:id="@+id/DownloadCategoriesTitle"
@@ -16,6 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:textColor="@color/white_background"
         android:text="@string/downloads_title"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -25,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/DownloadCategoriesTitle"
         android:layout_centerHorizontal="true"
+        android:textColor="@color/white_background"
         android:text="@string/download_prompt" />
 
     <ListView
@@ -41,6 +44,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/secondary_background"
         android:text="@string/back_menu_button" />
 </RelativeLayout>

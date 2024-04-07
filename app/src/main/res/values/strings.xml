@@ -43,7 +43,7 @@
     <string name="Timer">"Timer: "</string>
     <string name="TimeLeft">Time Left in Round</string>
     <string name="CardsAddedHeading">Cards Added (Max 60):</string>
-    <string name="choose_category">Choose a Category (must be already downloaded):</string>
+    <string name="choose_category">Choose Category (must be already downloaded):</string>
     <string name="back_screen_button">Back</string>
     <string name="start_countdown">Start Countdown!</string>
     <string name="dummy">Dummy Text</string>
@@ -51,7 +51,7 @@
     <string name="game_starting">Game Starting!</string>
     <string name="red_first">Red team has been selected to go first!</string>
     <string name="blue_first">Blue team has been selected to go first!</string>
-    <string name="touch_anywhere">*Touch Anywhere To Begin*</string>
+    <string name="touch_anywhere">Touch Anywhere To Begin</string>
     <string name="image_description">App Logo</string>
     <string name="view_cat">View Categories</string>
 
