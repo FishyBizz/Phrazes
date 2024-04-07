@@ -43,7 +43,7 @@ public class ChooseDeck extends AppCompatActivity {
                 DatabaseContract.setTableName(selectedCategory);
 
                 // Navigate to WordsActivity
-                Intent intent = new Intent(ChooseDeck.this, CountDown.class);
+                Intent intent = new Intent(ChooseDeck.this, ChooseTeam.class);
                 startActivity(intent);
             }
         });
