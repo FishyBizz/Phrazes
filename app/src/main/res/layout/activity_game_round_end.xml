@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/round_end_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/round_end_question"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/blue_won_round"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/round_end_question"
+            android:layout_alignTop="@id/round_end_question"
+            android:layout_marginTop="40dp"
+            android:text="@string/blue_wins_round"
+            android:textColorHighlight="#3F51B5"
+            android:textColorLink="#1F2B70" />
+
+        <Button
+            android:id="@+id/red_wins_round"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/round_end_question"
+            android:layout_alignEnd="@id/round_end_question"
+            android:layout_marginTop="40dp"
+            android:text="@string/red_wins_round"
+            android:textColorHighlight="#D50C0C"
+            android:textColorLink="#880909" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

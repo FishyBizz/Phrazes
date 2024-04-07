@@ -2,19 +2,17 @@ package edu.msu.cse476.phrazes.phrazes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import java.util.HashSet;
 import java.util.Random;
-import java.util.Scanner;
 import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 
-/**
- * GAMEACTIVITY IS THE MAIN LOGIC FOR THE GAMEPLAY
- */
 public class GameActivity extends AppCompatActivity {
 
     private int redScore = 0;
@@ -30,75 +28,45 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        /**
-         * Initialize word list variables
-         */
-        this.wordSet = new WordSet(); // Assuming WordSet has a default constructor
-        // Additional setup code if needed
+        this.wordSet = new WordSet();
         usedWords = new HashSet<>();
 
-        /**
-         * Initialize the number of rounds to be played (from Settings - SharedPreferences)
-         */
         SharedPreferences prefs = getSharedPreferences("AppSettings", MODE_PRIVATE);
         int savedPosition = prefs.getInt("SpinnerSelection", 1);
-
-        // Get the array
         String[] roundsArray = getResources().getStringArray(R.array.number_of_rounds);
-
         numRounds = Integer.parseInt(roundsArray[savedPosition]);
 
         setupGameTimer();
+        winningTeam = 'N';
     }
 
-    private void setupGameTimer() {
+    public void setupGameTimer() {
         timer = new Timer();
-
-        // Schedule the first round
         startNewRound();
     }
 
-    private void startNewRound() {
-        // Reset used words for a new round
-        usedWords.clear();
-
-        // Schedule a TimerTask with a random delay between 45 seconds and 1.5 minutes
+    void startNewRound() {
         long delay = getRandomDelay();
-        timer.schedule(new GameActivity.GameRoundTask(), delay);
+        timer.schedule(new GameRoundTask(), delay);
     }
 
-    private long getRandomDelay() {
+    private static long getRandomDelay() {
         Random random = new Random();
-        long minDelay = 45000; // 45 seconds in milliseconds
-        long maxDelay = 90000; // 1.5 minutes in milliseconds
-        return minDelay + random.nextInt((int) (maxDelay - minDelay + 1));
+        return 45000 + random.nextInt(45000); // between 45 sec and 1.5 min
     }
 
-    private void gameRound() {
-        System.out.println("Starting a new round...");
-
-        // Print a new word from the word list
+    public void gameRound() {
         String newWord = getNewWord();
-        System.out.println("Current word: " + newWord);
-
-        /**
-         * TEMPORARY USER INPUT - WILL REPLACE WITH BUTTON LOGIC
-         */
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Press Enter when you figure out the word...");
-        scanner.nextLine();
-
-        // Switch to a NEW/UNUSED word for each user input
         if (!usedWords.contains(newWord)) {
             usedWords.add(newWord);
-            System.out.println("User input received. Switching to new word...");
+            TextView addCardsTitleTextView = findViewById(R.id.addCardsTitle);
+            addCardsTitleTextView.setText(newWord);
         }
-
-        // Check if round over
         if (usedWords.size() >= wordSet.getWordArray().length) {
             endRound();
         }
     }
+
 
     private String getNewWord() {
         String[] wordArray = wordSet.getWordArray();
@@ -108,73 +76,45 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void endRound() {
-        Scanner scanner = new Scanner(System.in);
+        Intent intent = new Intent(this, RoundEndActivity.class);
+        intent.putExtra("redScore", redScore);
+        intent.putExtra("blueScore", blueScore);
+        startActivity(intent);
 
-        System.out.println("Round over!");
-        System.out.println("Which team wins? Enter 'R' for Red team or 'B' for Blue team:");
-
-        boolean validInput = false;
-        while (!validInput) {
-
-            /**
-             * REPLACE WITH ACTUAL BUTTON INPUT
-             */
-            String winningTeam = scanner.nextLine();
-
-            if (winningTeam.equals("R")) {
-                incrementRedScore();
-                validInput = true;
-            } else if (winningTeam.equals("B")) {
-                incrementBlueScore();
-                validInput = true;
-            } else {
-                System.out.println("Error in user input, try again.");
-                System.out.println("Which team wins? Enter 'R' for Red team or 'B' for Blue team:");
-            }
-        }
-
-        // Check if rounds are completed
         if (--numRounds > 0) {
-            startNewRound(); // Start next round if game unfinished
+            setupGameTimer();
         } else {
-            endGame(); // End the game if rounds done
+            endGame();
         }
-        scanner.close();
     }
 
     private void endGame() {
         determineWinningTeam();
-        System.out.println("THANKS FOR PLAYING...");
+        Intent intent = new Intent(GameActivity.this, GameEndActivity.class);
+        intent.putExtra("winningTeam", winningTeam);
+        startActivity(intent);
+        finish();
     }
+
 
     private void determineWinningTeam() {
-        // Your existing logic for determining the winning team
-        if(redScore > blueScore)
-        {
+        if (redScore > blueScore) {
             winningTeam = 'R';
-            System.out.println("RED TEAM WINS!!!");
-        }
-        else if(blueScore > redScore)
-        {
+        } else if (blueScore > redScore) {
             winningTeam = 'B';
-            System.out.println("BLUE TEAM WINS!!!");
-        }
-        else
-        {
-            winningTeam = 'N';
-            System.out.println("YOU BOTH LOSE!!! (THIS SHOULDN'T HAPPEN)");
+        } else {
+            winningTeam = 'N'; // shouldn't happen with odd rounds
         }
     }
 
-    private void incrementRedScore() {
+    public void incrementRedScore() {
         redScore++;
     }
 
-    private void incrementBlueScore() {
+    public void incrementBlueScore() {
         blueScore++;
     }
 
-    // Custom TimerTask class for the game round
     private class GameRoundTask extends TimerTask {
         @Override
         public void run() {

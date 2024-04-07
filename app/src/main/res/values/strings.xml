@@ -51,6 +51,12 @@
     <string name="game_starting">Game Starting!</string>
     <string name="red_first">Red team has been selected to go first!</string>
     <string name="blue_first">Blue team has been selected to go first!</string>
+    <string name="round_end_question">Boom! Time is UP! Who won this round?</string>
+    <string name="blue_wins_round">BLUE TEAM</string>
+    <string name="red_wins_round">RED TEAM</string>
+    <string name="red_wins_game">RED TEAM WINS!!!</string>
+    <string name="blue_wins_game">BLUE TEAM WINS!!!</string>
+    <string name="none_wins_game">NO TEAM WINS!!! you all suck</string>
     <string name="touch_anywhere">Touch Anywhere To Begin</string>
     <string name="image_description">App Logo</string>
     <string name="view_cat">View Categories</string>

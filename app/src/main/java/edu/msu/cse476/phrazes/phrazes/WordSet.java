@@ -1,26 +1,23 @@
 package edu.msu.cse476.phrazes.phrazes;
 
-/**
- * WordSet is a class that encapsulates all of the data in each WORDSET
- */
 public class WordSet {
     private String[] wordArray;
     private boolean isOnline;
     private String wordSetAuthor;
 
-    // Default constructor
     public WordSet() {
-        // Initialize variables or add other setup logic as needed
+        this.wordArray = new String[]{};
+        this.isOnline = false;
+        this.wordSetAuthor = "";
     }
 
-    // Parameterized constructor
     public WordSet(String[] wordArray, boolean isOnline, String wordSetAuthor) {
         this.wordArray = wordArray;
         this.isOnline = isOnline;
         this.wordSetAuthor = wordSetAuthor;
     }
 
-    // Getter methods
+    // getters/setters
     public String[] getWordArray() {
         return wordArray;
     }
@@ -33,7 +30,6 @@ public class WordSet {
         return wordSetAuthor;
     }
 
-    // Setter methods (if needed)
     public void setWordArray(String[] wordArray) {
         this.wordArray = wordArray;
     }
