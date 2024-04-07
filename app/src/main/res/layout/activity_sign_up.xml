@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/main_background"
     android:scrollbars="none"
     tools:context=".SignUpActivity">
 
@@ -15,27 +15,13 @@
         android:layout_marginEnd="22dp"
         android:orientation="vertical">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp">
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="72dp"
+        android:layout_height="59dp"
+        android:layout_gravity="start"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/logo_notxt" />
 
         <TextView
             android:layout_width="match_parent"
@@ -43,7 +29,7 @@
             android:layout_marginTop="24dp"
             android:text="@string/title_sign_up"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@color/white_background"
             android:textSize="50sp" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -61,7 +47,9 @@
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:singleLine="true"
-                android:textColor="@color/black" />
+                android:textColor="@color/white_background"
+                android:textColorHint="@color/white"
+                android:theme="@style/EditTextTheme" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -80,7 +68,9 @@
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
                 android:singleLine="true"
-                android:textColor="@color/black" />
+                android:textColor="@color/white_background"
+                android:textColorHint="@color/white"
+                android:theme="@style/EditTextTheme" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -101,7 +91,9 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:singleLine="true"
-                android:textColor="@color/black" />
+                android:textColor="@color/white_background"
+                android:textColorHint="@color/white"
+                android:theme="@style/EditTextTheme" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -121,7 +113,9 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:singleLine="true"
-                android:textColor="@color/black" />
+                android:textColor="@color/white_background"
+                android:textColorHint="@color/white"
+                android:theme="@style/EditTextTheme" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -141,7 +135,7 @@
                 android:id="@+id/btnSignUp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/black"
+                android:backgroundTint="@color/secondary_background"
                 android:paddingStart="20dp"
                 android:paddingTop="10dp"
                 android:paddingEnd="20dp"
@@ -171,6 +165,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:text="@string/signin_button"
+                android:textColor="@color/white_background"
                 android:textSize="14sp" />
 
 
