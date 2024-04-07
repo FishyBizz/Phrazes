@@ -2,16 +2,22 @@ package edu.msu.cse476.phrazes.phrazes;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
 
 
 public class WordsActivity extends AppCompatActivity {
 
     private Button backButton;
+    private ListView wordsListView;
+    private DatabaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +25,24 @@ public class WordsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_words);
 
         backButton = findViewById(R.id.wordsBack);
+        wordsListView = findViewById(R.id.wordsListView);
+        dbHelper = new DatabaseHelper(this);
+
+
+        // Words for the category
+        ArrayList<String> words = dbHelper.getWordsForCategory();
+
+        if (words.isEmpty()) {
+            Log.i("WordsActivity", "No words found for the category");
+        } else {
+            Log.i("WordsActivity", "Number of words found: " + words.size());
+        }
+
+        // Set up the ArrayAdapter and assign it to the ListView
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_list_item_1, words);
+        wordsListView.setAdapter(adapter);
+
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
