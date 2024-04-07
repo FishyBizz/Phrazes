@@ -26,14 +26,5 @@
         android:layout_centerHorizontal="true"
         android:paddingBottom="60dp" />
 
-    <Button
-        android:id="@+id/PlayGameButton"
-        android:layout_width="137dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/secondary_background"
-        android:text="@string/play_button" />
 
 </RelativeLayout>
