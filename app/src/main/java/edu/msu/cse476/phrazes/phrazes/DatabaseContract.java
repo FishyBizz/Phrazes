@@ -3,7 +3,7 @@ package edu.msu.cse476.phrazes.phrazes;
 import android.provider.BaseColumns;
 
 public final class DatabaseContract {
-    private static String tableName = null;
+    private static String tableName = "default";
     private DatabaseContract() {}
 
     public static class CardEntry implements BaseColumns {

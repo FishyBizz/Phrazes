@@ -1,6 +1,7 @@
 package edu.msu.cse476.phrazes.phrazes;
 
 import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -20,7 +21,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         // Create your table(s) here
-        db.execSQL(DatabaseContract.SQL_CREATE_TABLE_CARDS);
+        String defaultTableName = "default_table";
+        DatabaseContract.setTableName(defaultTableName);
+        String SQL_CREATE_TABLE_CARDS = "CREATE TABLE " + DatabaseContract.getTableName()
+                + " (" +
+                DatabaseContract.CardEntry._ID + " INTEGER PRIMARY KEY," +
+                DatabaseContract.CardEntry.COLUMN_CONTENT + " TEXT)";
+        db.execSQL(SQL_CREATE_TABLE_CARDS);
+        setDefault(db);
     }
 
     @Override
@@ -28,6 +36,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // Upgrade your database here if needed
         db.execSQL(DatabaseContract.SQL_DELETE_TABLE_CARDS);
         onCreate(db);
+    }
+    public void setDefault(SQLiteDatabase db){
+        String[] defaultData = {"Dog", "Cat", "Shard", "Lion", "Hawk", "Rat", "Dolphin",
+                "Alligator", "Giraffe", "Panther", "Sparty"};
+        for (String data : defaultData){
+            ContentValues values = new ContentValues();
+            values.put(DatabaseContract.CardEntry.COLUMN_CONTENT, data);
+            db.insert(DatabaseContract.getTableName(), null, values);
+        }
     }
 
     @SuppressLint("Range")

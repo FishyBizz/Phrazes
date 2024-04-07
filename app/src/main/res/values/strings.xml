@@ -55,6 +55,8 @@
     <string name="image_description">App Logo</string>
     <string name="view_cat">View Categories</string>
     <string name="cat_list">Choose a category</string>
+    <string name="delete">Click on a category to delete. (This will delete the deck)</string>
+    <string name="delete_button">Delete Categories</string>
 
     <string-array name="number_of_rounds">
         <item>1</item>

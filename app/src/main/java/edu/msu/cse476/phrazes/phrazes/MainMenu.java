@@ -28,6 +28,10 @@ public class MainMenu extends AppCompatActivity {
         Intent intent = new Intent(this, ViewCategories.class);
         startActivity(intent);
     }
+    public void onStartDeleteCategory(View view) {
+        Intent intent = new Intent(this, DeleteCategories.class);
+        startActivity(intent);
+    }
 
     public void onStartHowToPlay(View view) {
         Intent intent = new Intent(this, HowToPlayActivity.class);

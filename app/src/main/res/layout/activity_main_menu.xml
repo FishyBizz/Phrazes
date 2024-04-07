@@ -65,6 +65,15 @@
             android:text="@string/view_cat" />
 
         <Button
+            android:id="@+id/deleteCategoryButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@color/secondary_background"
+            android:onClick="onStartDeleteCategory"
+            android:text="@string/delete_button" />
+
+        <Button
             android:id="@+id/howToPlayButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

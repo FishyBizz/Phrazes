@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Phrazes"
         tools:targetApi="31">
         <activity
+            android:name=".DeleteCategories"
+            android:exported="false" />
+        <activity
             android:name=".WordsActivity"
             android:exported="false" />
         <activity
