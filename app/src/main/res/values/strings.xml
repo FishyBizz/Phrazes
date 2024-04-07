@@ -54,6 +54,7 @@
     <string name="touch_anywhere">*Touch Anywhere To Begin*</string>
     <string name="image_description">App Logo</string>
     <string name="view_cat">View Categories</string>
+    <string name="cat_list">Choose a category</string>
 
     <string-array name="number_of_rounds">
         <item>1</item>

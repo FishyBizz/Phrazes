@@ -36,7 +36,7 @@ public class AddCards extends AppCompatActivity {
         addButton = findViewById(R.id.addButton);
         backButton = findViewById(R.id.category_back);
         saveButton = findViewById(R.id.saveButton);
-        saveButton = findViewById(R.id.uploadButton);
+        uploadButton = findViewById(R.id.uploadButton);
         cardsListView = findViewById(R.id.cardsListView);
         categoryNameTextView = findViewById(R.id.CategoryName);
 
@@ -85,7 +85,8 @@ public class AddCards extends AppCompatActivity {
     public void onSave(View v) {
         // Create a table with the name specified in categoryName
         DatabaseContract.setTableName(categoryNameTextView.getText().toString());
-        String createTableQuery = "CREATE TABLE IF NOT EXISTS " + DatabaseContract.getTableName() + " (" +
+        String createTableQuery = "CREATE TABLE IF NOT EXISTS " + DatabaseContract.getTableName()
+                + " (" +
                 DatabaseContract.CardEntry._ID + " INTEGER PRIMARY KEY," +
                 DatabaseContract.CardEntry.COLUMN_CONTENT + " TEXT)";
 
@@ -94,6 +95,9 @@ public class AddCards extends AppCompatActivity {
             ContentValues values = new ContentValues();
             values.put(DatabaseContract.CardEntry.COLUMN_CONTENT, card);
         }
-        Toast.makeText(AddCards.this, "Cards saved successfully", Toast.LENGTH_SHORT).show();
+        Toast.makeText(AddCards.this, "Cards saved successfully",
+                Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(AddCards.this, MainMenu.class);
+        startActivity(intent);
     }
 }
