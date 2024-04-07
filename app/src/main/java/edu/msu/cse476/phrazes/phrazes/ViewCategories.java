@@ -52,8 +52,12 @@ public class ViewCategories extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selectedCategory = categoryNames.get(position);
+
+                // Set table name
+                DatabaseContract.setTableName(selectedCategory);
+
+                // Navigate to WordsActivity
                 Intent intent = new Intent(ViewCategories.this, WordsActivity.class);
-                intent.putExtra("categoryName", selectedCategory);
                 startActivity(intent);
             }
         });

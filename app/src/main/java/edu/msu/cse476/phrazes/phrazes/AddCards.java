@@ -3,6 +3,7 @@ package edu.msu.cse476.phrazes.phrazes;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -20,13 +21,12 @@ public class AddCards extends AppCompatActivity {
     private EditText itemText;
     private Button addButton;
     private Button backButton;
-    private Button saveButton;
-    private Button uploadButton;
     private ListView cardsListView;
     private ArrayAdapter<String> adapter;
     private ArrayList<String> itemList;
     private TextView categoryNameTextView;
     private SQLiteDatabase database;
+    DatabaseHelper dbHelper = new DatabaseHelper(this);
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,8 +35,7 @@ public class AddCards extends AppCompatActivity {
         itemText = findViewById(R.id.itemText);
         addButton = findViewById(R.id.addButton);
         backButton = findViewById(R.id.category_back);
-        saveButton = findViewById(R.id.saveButton);
-        uploadButton = findViewById(R.id.uploadButton);
+        Button uploadButton = findViewById(R.id.uploadButton);
         cardsListView = findViewById(R.id.cardsListView);
         categoryNameTextView = findViewById(R.id.CategoryName);
 
@@ -49,7 +48,7 @@ public class AddCards extends AppCompatActivity {
 
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, itemList);
         cardsListView.setAdapter(adapter);
-        DatabaseHelper dbHelper = new DatabaseHelper(this);
+
         database = dbHelper.getWritableDatabase();
 
         addButton.setOnClickListener(new View.OnClickListener() {
@@ -91,10 +90,14 @@ public class AddCards extends AppCompatActivity {
                 DatabaseContract.CardEntry.COLUMN_CONTENT + " TEXT)";
 
         database.execSQL(createTableQuery);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
         for (String card : itemList) {
             ContentValues values = new ContentValues();
             values.put(DatabaseContract.CardEntry.COLUMN_CONTENT, card);
+            db.insert(DatabaseContract.getTableName(), null, values);
+
         }
+        db.close();
         Toast.makeText(AddCards.this, "Cards saved successfully",
                 Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(AddCards.this, MainMenu.class);
