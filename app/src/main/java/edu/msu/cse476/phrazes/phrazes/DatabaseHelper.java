@@ -21,7 +21,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         // Create your table(s) here
-        String defaultTableName = "default_table";
+        String defaultTableName = "Phazes_Default";
         DatabaseContract.setTableName(defaultTableName);
         String SQL_CREATE_TABLE_CARDS = "CREATE TABLE " + DatabaseContract.getTableName()
                 + " (" +
