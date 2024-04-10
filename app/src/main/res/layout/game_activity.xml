@@ -60,7 +60,6 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@color/white_background" />
 
-    <!-- USED for testing
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
