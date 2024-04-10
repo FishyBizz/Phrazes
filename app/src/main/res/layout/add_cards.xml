@@ -17,7 +17,8 @@
         android:layout_alignParentTop="true"
         android:textColor="@color/white_background"
         android:text="@string/AddCardsTitle"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="25sp"/>
 
     <TextView
         android:id="@+id/CategoryName"
@@ -26,7 +27,9 @@
         android:layout_toEndOf="@id/addCardsTitle"
         android:textColor="@color/white_background"
         android:text="@string/CategoryName"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        android:layout_marginStart="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="25sp"/>
 
     <LinearLayout
         android:id="@+id/AddCardLayout"
@@ -41,12 +44,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="25"
-            android:inputType="textNoSuggestions"
             android:hint="@string/CardTitle"
+            android:inputType="textNoSuggestions"
             android:paddingTop="50dp"
+            android:textAlignment="center"
             android:textColor="@color/white_background"
             android:textColorHint="@color/white"
-            android:theme="@style/EditTextTheme"/>
+            android:textSize="23sp"
+            android:theme="@style/EditTextTheme" />
 
         <Button
             android:id="@+id/addButton"
@@ -66,7 +71,8 @@
         android:backgroundTint="@color/secondary_background"
         android:layout_above="@+id/category_back"
         android:onClick="onSave"
-        android:text="@string/Save"/>
+        android:text="@string/Save"
+        android:textSize="20sp"/>
 
     <Button
         android:id="@+id/uploadButton"
@@ -75,7 +81,8 @@
         android:backgroundTint="@color/secondary_background"
         android:layout_above="@+id/category_back"
         android:layout_alignEnd="@id/cardsListView"
-        android:text="@string/Upload" />
+        android:text="@string/Upload"
+        android:textSize="20sp"/>
 
     <Button
         android:id="@+id/category_back"
@@ -83,7 +90,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:backgroundTint="@color/secondary_background"
-        android:text="@string/back_screen_button" />
+        android:text="@string/back_screen_button"
+        android:textSize="20sp"/>
 
     <ListView
         android:id="@+id/cardsListView"
@@ -93,6 +101,5 @@
         android:layout_below="@id/AddCardLayout"
         android:layout_marginTop="-1dp"
         android:layout_marginBottom="-1dp" />
-
 
 </RelativeLayout>

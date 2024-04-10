@@ -35,7 +35,7 @@ public class ViewCategories extends AppCompatActivity {
         ArrayList<String> categoryNames = getCategoryNames();
 
         // Create the ArrayAdapter and set it to the ListView
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,
+        adapter = new ArrayAdapter<>(this, R.layout.list_item_custom, R.id.textViewListItem,
                 categoryNames);
         categoriesListView.setAdapter(adapter);
 

@@ -14,9 +14,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:textColor="@color/white_background"
         android:text="@string/choose_category"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/white_background"
+        android:textSize="27sp" />
 
     <ListView
         android:id="@+id/categoryList"
@@ -24,7 +26,20 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/chooseCategoryTitle"
         android:layout_centerHorizontal="true"
+        android:layout_above="@+id/choose_back"
         android:paddingBottom="60dp" />
 
+    <Button
+        android:id="@+id/choose_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/back_to_main_menu"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/secondary_background"
+        android:textSize="20sp"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp" />
 
 </RelativeLayout>

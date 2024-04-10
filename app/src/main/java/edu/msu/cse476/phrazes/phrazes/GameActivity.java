@@ -4,21 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
-public class GameActivity extends AppCompatActivity implements SensorEventListener {
+public class GameActivity extends AppCompatActivity{
 
     private int redScore = 0;
     private int blueScore = 0;
@@ -32,15 +27,12 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
 //    private TextView tempTimerView;
     private static final int ROUND_END_REQUEST_CODE = 1;
 
-    private static final int ROTATION_THRESHOLD = 9;
-
-    private SensorManager sensorManager;
-    private Sensor accelerometer;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_activity);
+
+
         DatabaseHelper dbHelper = new DatabaseHelper(this);
         // For testing only...
 //        tempTimerView = findViewById(R.id.TempTimerHeading);
@@ -55,45 +47,10 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
         String[] roundsArray = getResources().getStringArray(R.array.number_of_rounds);
         numRounds = Integer.parseInt(roundsArray[savedPosition]);
 
-        //accelerometer setup
-        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-        accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-
-        // winning team variables
+        // Start Game
         startGameTimer();
     }
 
-    protected void onResume() {
-        super.onResume();
-        // Register the accelerometer sensor listener
-        sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_GAME);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        // Unregister the accelerometer sensor listener
-        sensorManager.unregisterListener(this);
-    }
-
-    @Override
-    public void onSensorChanged(SensorEvent event) {
-        // Check if the sensor is the gyroscope
-        if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-            // Get acceleration values
-            float xAccel = event.values[0];
-
-            // Check if the device is rotated to the left or right
-            if (Math.abs(xAccel) > ROTATION_THRESHOLD) {
-                // Rotation detected updateWord()
-                updateWord();
-            }
-        }
-    }
-
-    @Override
-    public void onAccuracyChanged(Sensor sensor, int accuracy) {
-    }
 
     private void startGameTimer() {
 
@@ -117,6 +74,7 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
             endGame();
         }
     }
+
 
     private static long getRandomDelay() {
         Random random = new Random();
@@ -170,6 +128,14 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
             }
             startGameTimer(); // Start next round or end game if all rounds are completed
         }
+    }
+
+    public void passButtonClicked(View view){
+        updateWord();
+    }
+
+    public void correctButtonClicked(View view){
+        updateWord();
     }
 
     private void endGame() {

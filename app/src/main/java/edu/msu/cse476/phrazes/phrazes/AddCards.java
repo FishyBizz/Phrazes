@@ -50,7 +50,7 @@ public class AddCards extends AppCompatActivity {
 
         itemList = new ArrayList<>(); //array of all the created cards
 
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, itemList);
+        adapter = new ArrayAdapter<>(this, R.layout.list_item_custom, R.id.textViewListItem, itemList);
         cardsListView.setAdapter(adapter);
 
         database = dbHelper.getWritableDatabase();

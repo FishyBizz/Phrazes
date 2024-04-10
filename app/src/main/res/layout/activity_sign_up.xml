@@ -16,12 +16,13 @@
         android:orientation="vertical">
 
         <ImageView
-        android:id="@+id/logoImageView"
-        android:layout_width="72dp"
-        android:layout_height="59dp"
-        android:layout_gravity="start"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/logo_notxt" />
+            android:id="@+id/logoImageView"
+            android:layout_width="85dp"
+            android:layout_height="74dp"
+            android:layout_gravity="start"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/logo_text"
+            android:contentDescription="@string/phazesLogo_description" />
 
         <TextView
             android:layout_width="match_parent"
@@ -141,7 +142,8 @@
                 android:paddingEnd="20dp"
                 android:paddingBottom="20dp"
                 android:text="@string/sign_up_button"
-                app:cornerRadius="10dp" />
+                app:cornerRadius="10dp"
+                android:textSize="20sp"/>
 
         </FrameLayout>
 
@@ -157,7 +159,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/have_account"
                 android:textColor="@color/black"
-                android:textSize="14sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/txtSignIn"
@@ -166,7 +168,7 @@
                 android:layout_marginStart="10dp"
                 android:text="@string/signin_button"
                 android:textColor="@color/white_background"
-                android:textSize="14sp" />
+                android:textSize="15sp" />
 
 
         </LinearLayout>

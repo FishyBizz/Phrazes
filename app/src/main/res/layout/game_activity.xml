@@ -23,7 +23,8 @@
             android:layout_height="wrap_content"
             android:text="@string/RoundNumberHeading"
             android:textColor="@color/white_background"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textSize="25sp"/>
 
         <TextView
             android:id="@+id/RoundNumber"
@@ -32,11 +33,12 @@
             android:layout_marginStart="8dp"
             android:text="@string/RoundNumber"
             android:textColor="@color/white_background"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textSize="20sp"/>
 
 
     </LinearLayout>
-<!--
+<!-- For testing
     <TextView
         android:id="@+id/TempTimerHeading"
         android:layout_width="wrap_content"
@@ -57,5 +59,68 @@
         android:text="@string/DisplayCard"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@color/white_background" />
+
+    <!-- Instructional Text and Buttons -->
+    <LinearLayout
+        android:id="@+id/instructionsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/buttonLayout"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/keep_text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/white_background"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/pass_text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/white_background"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/passButton"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/red"
+            android:text="@string/Pass"
+            android:textColor="@color/white"
+            android:onClick="passButtonClicked" />
+
+        <Button
+            android:id="@+id/correctButton"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/green"
+            android:text="@string/correct"
+            android:textColor="@color/white"
+            android:onClick="correctButtonClicked" />
+    </LinearLayout>
 
 </RelativeLayout>

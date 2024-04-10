@@ -16,7 +16,8 @@
             android:layout_height="59dp"
             android:layout_gravity="start"
             android:layout_marginTop="45dp"
-            android:src="@drawable/logo_notxt" />
+            android:src="@drawable/logo_notxt"
+            android:contentDescription="@string/phazesLogo_description" />
 
         <TextView
             android:id="@+id/title_rules"
@@ -26,17 +27,19 @@
             android:gravity="center"
             android:text="@string/rules_title"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="@color/white_background" />
+            android:textColor="@color/white_background"
+            android:textSize="40sp"/>
 
         <TextView
             android:id="@+id/rule_book"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:lineSpacingExtra="8dp"
+            android:padding="16dp"
             android:text="@string/rules_text"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="@color/white_background"
-            android:padding="16dp"
-            android:lineSpacingExtra="8dp" />
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/rules_back"
@@ -44,6 +47,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/secondary_background"
             android:text="@string/back_menu_button"
-            android:layout_marginTop="24dp" />
+            android:layout_marginTop="24dp"
+            android:textSize="25sp"/>
     </LinearLayout>
 </ScrollView>
