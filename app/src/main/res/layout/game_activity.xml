@@ -38,7 +38,7 @@
 
 
     </LinearLayout>
-<!--
+<!-- For testing
     <TextView
         android:id="@+id/TempTimerHeading"
         android:layout_width="wrap_content"
@@ -90,6 +90,5 @@
             android:onClick="correctButtonClicked" />
 
     </LinearLayout>
--->
 
 </RelativeLayout>

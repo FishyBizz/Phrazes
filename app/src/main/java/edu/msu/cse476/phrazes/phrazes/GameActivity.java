@@ -4,18 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.TextView;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
@@ -54,7 +47,7 @@ public class GameActivity extends AppCompatActivity{
         String[] roundsArray = getResources().getStringArray(R.array.number_of_rounds);
         numRounds = Integer.parseInt(roundsArray[savedPosition]);
 
-        // winning team variables
+        // Start Game
         startGameTimer();
     }
 
