@@ -32,6 +32,19 @@
             android:text="@string/back_to_main_menu"
             android:textSize="18sp" />
 
+        <Button
+            android:id="@+id/gameEnd_picture"
+            android:layout_width="205dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/gameEnd_back"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="@color/secondary_background"
+            android:minHeight="48dp"
+            android:onClick="onStartPicture"
+            android:text="@string/Picture"
+            android:textSize="18sp" />
+
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

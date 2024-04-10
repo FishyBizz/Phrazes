@@ -32,7 +32,6 @@ public class GameActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_activity);
 
-
         DatabaseHelper dbHelper = new DatabaseHelper(this);
         // For testing only...
 //        tempTimerView = findViewById(R.id.TempTimerHeading);
@@ -50,7 +49,6 @@ public class GameActivity extends AppCompatActivity{
         // Start Game
         startGameTimer();
     }
-
 
     private void startGameTimer() {
 

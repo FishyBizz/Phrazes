@@ -83,6 +83,7 @@
     <string name="keep_text">Keep the device and try another word!</string>
     <string name="pass_text">Pass to the OPPOSITE Team!</string>
     <string name="phazesLogo_description">Phazes Logo</string>
+    <string name="Picture">Take a Winner Snap Shot!</string>
 
     <string-array name="number_of_rounds">
         <item>1</item>
