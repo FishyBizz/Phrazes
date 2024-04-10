@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
@@ -37,10 +39,15 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
     private SensorManager sensorManager;
     private Sensor accelerometer;
 
+    private long lastUpdateTime = 0;
+    private long timeLeftOver;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_activity);
+
+
         DatabaseHelper dbHelper = new DatabaseHelper(this);
         // For testing only...
 //        tempTimerView = findViewById(R.id.TempTimerHeading);
@@ -80,13 +87,37 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
     public void onSensorChanged(SensorEvent event) {
         // Check if the sensor is the gyroscope
         if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-            // Get acceleration values
-            float xAccel = event.values[0];
+            int orientation = getResources().getConfiguration().orientation;
+            if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                // Get acceleration values
+                float xAccel = event.values[0];
 
-            // Check if the device is rotated to the left or right
-            if (Math.abs(xAccel) > ROTATION_THRESHOLD) {
-                // Rotation detected updateWord()
-                updateWord();
+                // Check if the device is rotated to the left or right
+                if (Math.abs(xAccel) > ROTATION_THRESHOLD) {
+                    long currentTime = System.currentTimeMillis();
+                    if (currentTime - lastUpdateTime > 2000) {
+                        // Rotation detected, updateWord()
+                        updateWord();
+                        lastUpdateTime = currentTime; // Update last update time
+                    }
+                    // Rotation detected updateWord()
+                    updateWord();
+                }
+            } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                // Get acceleration values
+                float yAccel = event.values[1];
+
+                // Check if the device is rotated to the left or right
+                if (Math.abs(yAccel) > ROTATION_THRESHOLD) {
+                    long currentTime = System.currentTimeMillis();
+                    if (currentTime - lastUpdateTime > 2000) {
+                        // Rotation detected, updateWord()
+                        updateWord();
+                        lastUpdateTime = currentTime; // Update last update time
+                    }
+                    // Rotation detected updateWord()
+                    updateWord();
+                }
             }
         }
     }
@@ -107,6 +138,7 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
             gameTimer = new CountDownTimer(getRandomDelay(), 1000) { // 30 seconds for each round
                 public void onTick(long millisUntilFinished) {
                     // For testing only...
+                    timeLeftOver = millisUntilFinished;
 //                    tempTimerView.setText("Time: " + millisUntilFinished / 1000);
                 }
                 public void onFinish() {
@@ -117,6 +149,7 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
             endGame();
         }
     }
+
 
     private static long getRandomDelay() {
         Random random = new Random();
