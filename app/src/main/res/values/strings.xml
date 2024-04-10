@@ -64,6 +64,9 @@
     <string name="delete">Click on a category to delete. (This will delete the deck)</string>
     <string name="delete_button">Delete Categories</string>
     <string name="back_to_main_menu">Back to Main Menu</string>
+    <string name="round_number">Round %1$d</string>
+    <string name="time_heading">Temp Timer: </string>
+    <string name="time">Time Currently On</string>
 
     <string-array name="number_of_rounds">
         <item>1</item>

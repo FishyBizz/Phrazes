@@ -5,90 +5,142 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class GameActivity extends AppCompatActivity {
 
     private int redScore = 0;
     private int blueScore = 0;
-    private char winningTeam;
-    private WordSet wordSet;
-    private Timer timer;
+    private char winningTeam = 'N';
+    private static CountDownTimer gameTimer;
     private int numRounds;
+    private int currRound = 0;
+    private ArrayList<String> words;
     private Set<String> usedWords;
+    // Timer visual textView
+//    private TextView tempTimerView;
+    private static final int ROUND_END_REQUEST_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game);
+        setContentView(R.layout.game_activity);
+        DatabaseHelper dbHelper = new DatabaseHelper(this);
+        // For testing only...
+//        tempTimerView = findViewById(R.id.TempTimerHeading);
 
-        this.wordSet = new WordSet();
+        // word list initializations
         usedWords = new HashSet<>();
+        words = dbHelper.getWordsForCategory();
 
+        // Parse the string value to an integer
         SharedPreferences prefs = getSharedPreferences("AppSettings", MODE_PRIVATE);
         int savedPosition = prefs.getInt("SpinnerSelection", 1);
         String[] roundsArray = getResources().getStringArray(R.array.number_of_rounds);
         numRounds = Integer.parseInt(roundsArray[savedPosition]);
 
-        setupGameTimer();
-        winningTeam = 'N';
+        // winning team variables
+        startGameTimer();
     }
 
-    public void setupGameTimer() {
-        timer = new Timer();
-        startNewRound();
-    }
+    private void startGameTimer() {
 
-    void startNewRound() {
-        long delay = getRandomDelay();
-        timer.schedule(new GameRoundTask(), delay);
-    }
+        // update round number text view
+        currRound++;
+        TextView roundNumberTextView = findViewById(R.id.RoundNumber);
+        roundNumberTextView.setText(getString(R.string.round_number, currRound));
 
-    private static long getRandomDelay() {
-        Random random = new Random();
-        return 45000 + random.nextInt(45000); // between 45 sec and 1.5 min
-    }
-
-    public void gameRound() {
-        String newWord = getNewWord();
-        if (!usedWords.contains(newWord)) {
-            usedWords.add(newWord);
-            TextView addCardsTitleTextView = findViewById(R.id.addCardsTitle);
-            addCardsTitleTextView.setText(newWord);
-        }
-        if (usedWords.size() >= wordSet.getWordArray().length) {
-            endRound();
-        }
-    }
-
-
-    private String getNewWord() {
-        String[] wordArray = wordSet.getWordArray();
-        Random random = new Random();
-        int index = random.nextInt(wordArray.length);
-        return wordArray[index];
-    }
-
-    private void endRound() {
-        Intent intent = new Intent(this, RoundEndActivity.class);
-        intent.putExtra("redScore", redScore);
-        intent.putExtra("blueScore", blueScore);
-        startActivity(intent);
-
-        if (--numRounds > 0) {
-            setupGameTimer();
+        if (currRound <= numRounds) {
+            updateWord();
+            gameTimer = new CountDownTimer(getRandomDelay(), 1000) { // 30 seconds for each round
+                public void onTick(long millisUntilFinished) {
+                    // For testing only...
+//                    tempTimerView.setText("Time: " + millisUntilFinished / 1000);
+                }
+                public void onFinish() {
+                    endRound();
+                }
+            }.start();
         } else {
             endGame();
         }
     }
 
+    private static long getRandomDelay() {
+        Random random = new Random();
+        return 35000 + random.nextInt(90000); // between 35 sec and 90 sec
+        // For testing only...
+//        return 20000; // 20 seconds
+    }
+
+    public void passButtonClicked(View view) {
+        updateWord();
+    }
+
+    public void correctButtonClicked(View view) {
+        updateWord();
+    }
+
+    public void updateWord() {
+        // Display a new word
+        String newWord = getNewWord();
+        TextView addCardsTitleTextView = findViewById(R.id.addCardsTitle);
+        addCardsTitleTextView.setText(newWord);
+    }
+
+    private String getNewWord() {
+        if(usedWords.size() == words.size()){
+            usedWords.clear();
+        }
+        Random random = new Random();
+        int index;
+        String newWord;
+        do {
+            index = random.nextInt(words.size());
+            newWord = words.get(index);
+        } while (usedWords.contains(newWord));
+
+        usedWords.add(newWord); // add the new word to usedWords
+        return newWord;
+    }
+
+    private void endRound() {
+        // Logic to record who won the round, could update a model or UI
+        gameTimer.cancel(); // Cancel current timer if still running
+
+        Log.d("GameActivity", "Loading Intent...");
+
+        // Intent Declaration
+        Intent intent = new Intent(GameActivity.this, RoundEndActivity.class);
+        startActivityForResult(intent, ROUND_END_REQUEST_CODE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == ROUND_END_REQUEST_CODE && resultCode == RESULT_OK) {
+            String winner = data.getStringExtra("winner");
+            Log.d("GameActivity", "winner: " + winner);
+            if("Blue".equals(winner)) {
+                incrementBlueScore();
+            }
+            else if("Red".equals(winner)) {
+                incrementRedScore();
+            }
+            startGameTimer(); // Start next round or end game if all rounds are completed
+        }
+    }
+
     private void endGame() {
+        // Determine the winning team and end the game
         determineWinningTeam();
         Intent intent = new Intent(GameActivity.this, GameEndActivity.class);
         intent.putExtra("winningTeam", winningTeam);
@@ -96,11 +148,13 @@ public class GameActivity extends AppCompatActivity {
         finish();
     }
 
-
     private void determineWinningTeam() {
+        // Determine the winning team based on the scores
         if (redScore > blueScore) {
+            Log.d("Red Team Wins", String.valueOf(redScore));
             winningTeam = 'R';
         } else if (blueScore > redScore) {
+            Log.d("Red Team Wins", String.valueOf(blueScore));
             winningTeam = 'B';
         } else {
             winningTeam = 'N'; // shouldn't happen with odd rounds
@@ -108,17 +162,13 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void incrementRedScore() {
+        Log.d("GameActivity", "Red Incremented");
         redScore++;
     }
 
     public void incrementBlueScore() {
+        Log.d("GameActivity", "Blue Incremented");
         blueScore++;
     }
-
-    private class GameRoundTask extends TimerTask {
-        @Override
-        public void run() {
-            gameRound();
-        }
-    }
 }
+

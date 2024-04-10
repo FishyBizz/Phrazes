@@ -58,6 +58,12 @@
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
+            android:name=".RoundEndActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GameEndActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -66,6 +72,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
