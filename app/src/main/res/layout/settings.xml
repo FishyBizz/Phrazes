@@ -31,19 +31,21 @@
         android:paddingEnd="10dp"
         android:paddingTop="24dp"
         android:text="@string/rounds"
-
+        android:textSize="25sp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/white_background" />
 
     <Spinner
         android:id="@+id/TimeLimits"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
+        android:layout_width="163dp"
+        android:layout_height="66dp"
         android:layout_alignTop="@id/TimeLimitText"
-        android:layout_toEndOf="@id/TimeLimitText"
         android:layout_alignParentEnd="true"
+        android:layout_marginEnd="0dp"
+        android:layout_toEndOf="@id/TimeLimitText"
+        android:paddingTop="24dp"
         android:textColor="@color/white_background"
-        android:paddingTop="24dp" />
+        android:textSize="20sp" />
 
     <!-- Log Out Button -->
     <Button
@@ -53,7 +55,8 @@
         android:layout_above="@id/settings_back"
         android:layout_marginBottom="16dp"
         android:backgroundTint="@color/red"
-        android:text="@string/logout_button" />
+        android:text="@string/logout_button"
+        android:textSize="20sp"/>
 
     <Button
         android:id="@+id/settings_back"
@@ -61,5 +64,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:backgroundTint="@color/secondary_background"
-        android:text="@string/back_menu_button" />
+        android:text="@string/back_menu_button"
+        android:textSize="25sp"/>
 </RelativeLayout>

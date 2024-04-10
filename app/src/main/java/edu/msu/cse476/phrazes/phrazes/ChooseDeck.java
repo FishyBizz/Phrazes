@@ -31,7 +31,7 @@ public class ChooseDeck extends AppCompatActivity {
         categoryNames = getCategoryNames();
 
         // Create the ArrayAdapter and set it to the ListView
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, categoryNames);
+        adapter = new ArrayAdapter<>(this, R.layout.list_item_custom, R.id.textViewListItem, categoryNames);
         categoryList.setAdapter(adapter);
 
         categoryList.setOnItemClickListener(new AdapterView.OnItemClickListener(){
