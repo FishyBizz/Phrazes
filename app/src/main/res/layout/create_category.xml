@@ -26,9 +26,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/logoImageView"
         android:text="@string/AddCardsTitle"
-        android:textColor="@color/white_background"
+        android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="25sp"/>
+        android:textColor="@color/white_background"
+        android:textSize="25sp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/centeredLayout"
@@ -41,30 +42,31 @@
             android:id="@+id/CreateCategoryPrompt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/categoryName"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:text="@string/create_prompt"
+            android:textAlignment="center"
             android:textColor="@color/white_background"
-            android:textSize="20sp"/>
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@id/categoryName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/categoryName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/CreateCategoryPrompt"
-            app:layout_constraintBottom_toTopOf="@id/createDeckButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:hint="@string/create_box_text"
             android:inputType="textNoSuggestions"
+            android:paddingStart="8dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="8dp"
             android:textColor="@color/white_background"
             android:textColorHint="#80FFFFFF"
-            android:textSize="20sp"
-            android:paddingTop="16dp"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"/>
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@id/createDeckButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/CreateCategoryPrompt" />
 
         <Button
             android:id="@+id/createDeckButton"

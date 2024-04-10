@@ -21,13 +21,25 @@
     <string name="settings_title">Settings</string>
     <string name="rounds">Number of Rounds:</string>
     <string name="downloads_title">Download Lists</string>
-    <string name="download_prompt">Below are Category Lists from our very own remote server. Click on any of the lists below and they will be downloaded to your devices local save.</string>
+    <string name="download_prompt">Below are Category Lists from our very own remote server. Click
+        on any of the lists below and they will be downloaded to your devices local save.</string>
     <string name="create_title">Create Category</string>
     <string name="create_prompt">Type in a name for your custom word list below.</string>
     <string name="create_box_text">Name of Category for Custom List</string>
     <string name="create_button">Create List</string>
     <string name="rules_title">How to Play Phrazes</string>
-    <string name="rules_text">Phrazes is similar to other game you might have played such as Catchphrases and Headsup mixed in with hot-potato. During each teams turn, a word will be displayed to ONE member of the corresponding team. Make sure this person is holding the device in a way that other members of his team can\'t see the word being displayed. This individual can make any physical gesture and give any verbal clue to get your team to say the word, however the verbal clue can\'t include ANY part of the word or a word that rhymes. For each round there is a timer, and when the timer reaches 0 seconds, the device \'blows up\', giving the other team a point for the round. Whichever team that has the most points at the end of the game wins!</string>
+    <string name="rules_text">Phrazes is similar to other game you might have played such as
+        Catchphrases and Headsup mixed in with hot-potato. During each teams turn, a word will be
+        displayed to ONE member of the corresponding team. Make sure this person is holding the
+        device in a way that other members of his team can\'t see the word being displayed. This
+        individual can make any physical gesture and give any verbal clue to get your team to say
+        the word, however the verbal clue can\'t include ANY part of the word or a word that rhymes.
+        If your team gets the word CORRECT, then pass the device to a member of the OPPOSITE TEAM.
+        If the word is PASSED - Your team will keep holding the device, but be given another word to
+        try and guess. The device stays with the TEAM until the CORRECT word is guessed. For each
+        round there is a timer, and when the timer reaches 0 seconds, the device \'blows up\',
+        giving the other team a point for the round. Whichever team that has the most points at the
+        end of the game wins!</string>
     <string name="logout_button">Log Out</string>
     <string name="AddCardsTitle">Editing Category:</string>
     <string name="CategoryName">Name of Category</string>
@@ -47,7 +59,7 @@
     <string name="back_screen_button">Back</string>
     <string name="start_countdown">Start Countdown!</string>
     <string name="dummy">Dummy Text</string>
-    <string name="countdown_format">Game starts in %1$d seconds</string>
+    <string name="countdown_format">Game starts in %1$d second(s)</string>
     <string name="game_starting">Game Starting!</string>
     <string name="red_first">Red team has been selected to go first!</string>
     <string name="blue_first">Blue team has been selected to go first!</string>
@@ -61,12 +73,16 @@
     <string name="image_description">App Logo</string>
     <string name="view_cat">View Categories</string>
     <string name="cat_list">Choose a category</string>
-    <string name="delete">Click on a category to delete. (This will delete the deck)</string>
+    <string name="delete">Click on a category to delete.
+        (This WILL DELETE the deck)</string>
     <string name="delete_button">Delete Categories</string>
     <string name="back_to_main_menu">Back to Main Menu</string>
     <string name="round_number">Round %1$d</string>
     <string name="time_heading">Temp Timer: </string>
     <string name="time">Time Currently On</string>
+    <string name="keep_text">Keep the device and try another word!</string>
+    <string name="pass_text">Pass to the OPPOSITE Team!</string>
+    <string name="phazesLogo_description">Phazes Logo</string>
 
     <string-array name="number_of_rounds">
         <item>1</item>

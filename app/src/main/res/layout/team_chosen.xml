@@ -11,8 +11,9 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text="@string/dummy"
-        android:textColor="@color/white_background"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/white_background" />
 
     <Button
         android:id="@+id/button2"

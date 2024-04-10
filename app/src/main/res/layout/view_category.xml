@@ -15,9 +15,10 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:text="@string/choose_category"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/white_background"
-        android:textSize="30sp"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textSize="30sp" />
 
     <ListView
         android:id="@+id/categoriesListView"

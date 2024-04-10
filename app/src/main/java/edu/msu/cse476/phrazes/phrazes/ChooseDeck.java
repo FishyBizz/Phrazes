@@ -9,14 +9,13 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ChooseDeck extends AppCompatActivity {
 
-    private ArrayAdapter<String> adapter;
-    private ListView categoryList;
     private ArrayList<String> categoryNames;
     private DatabaseHelper dbHelper;
 
@@ -25,13 +24,14 @@ public class ChooseDeck extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choose_category);
 
-        categoryList = findViewById(R.id.categoryList);
+        ListView categoryList = findViewById(R.id.categoryList);
         dbHelper = new DatabaseHelper(this);
 
         categoryNames = getCategoryNames();
 
         // Create the ArrayAdapter and set it to the ListView
-        adapter = new ArrayAdapter<>(this, R.layout.list_item_custom, R.id.textViewListItem, categoryNames);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_custom, R.id.textViewListItem,
+                categoryNames);
         categoryList.setAdapter(adapter);
 
         categoryList.setOnItemClickListener(new AdapterView.OnItemClickListener(){
@@ -45,6 +45,16 @@ public class ChooseDeck extends AppCompatActivity {
                 // Navigate to WordsActivity
                 Intent intent = new Intent(ChooseDeck.this, ChooseTeam.class);
                 startActivity(intent);
+            }
+        });
+
+        Button backButton = findViewById(R.id.choose_back);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent buttonIntent = new Intent(ChooseDeck.this,
+                        MainMenu.class);
+                startActivity(buttonIntent);
             }
         });
     }

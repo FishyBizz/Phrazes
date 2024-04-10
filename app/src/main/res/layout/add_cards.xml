@@ -27,6 +27,7 @@
         android:layout_toEndOf="@id/addCardsTitle"
         android:textColor="@color/white_background"
         android:text="@string/CategoryName"
+        android:layout_marginStart="16dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="25sp"/>
 
@@ -43,13 +44,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="25"
-            android:inputType="textNoSuggestions"
             android:hint="@string/CardTitle"
+            android:inputType="textNoSuggestions"
             android:paddingTop="50dp"
+            android:textAlignment="center"
             android:textColor="@color/white_background"
             android:textColorHint="@color/white"
-            android:theme="@style/EditTextTheme"
-            android:textSize="23sp"/>
+            android:textSize="23sp"
+            android:theme="@style/EditTextTheme" />
 
         <Button
             android:id="@+id/addButton"
@@ -99,6 +101,5 @@
         android:layout_below="@id/AddCardLayout"
         android:layout_marginTop="-1dp"
         android:layout_marginBottom="-1dp" />
-
 
 </RelativeLayout>

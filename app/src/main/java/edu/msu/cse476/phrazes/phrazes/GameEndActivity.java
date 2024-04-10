@@ -3,13 +3,13 @@ package edu.msu.cse476.phrazes.phrazes;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 public class GameEndActivity extends Activity {
 
     private TextView winnerText;
-    private Button backToMainMenuButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +17,7 @@ public class GameEndActivity extends Activity {
         setContentView(R.layout.activity_game_end);
 
         winnerText = findViewById(R.id.winnerText);
-        backToMainMenuButton = findViewById(R.id.backToMainMenuButton);
+        Button backButton = findViewById(R.id.gameEnd_back);
 
         Intent intent = getIntent();
         if (intent != null && intent.hasExtra("winningTeam")) {
@@ -25,8 +25,14 @@ public class GameEndActivity extends Activity {
             displayWinningTeam(winningTeam);
         }
 
-        // going back to the main menu
-        backToMainMenuButton.setOnClickListener(v -> navigateToMainMenu());
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent buttonIntent = new Intent(GameEndActivity.this,
+                        MainMenu.class);
+                startActivity(buttonIntent);
+            }
+        });
     }
 
     private void displayWinningTeam(char winningTeam) {
@@ -37,11 +43,5 @@ public class GameEndActivity extends Activity {
             winningText = getString(R.string.blue_wins_game);
         }
         winnerText.setText(winningText);
-    }
-
-    private void navigateToMainMenu() {
-        Intent intent = new Intent(GameEndActivity.this, MainMenu.class);
-        startActivity(intent);
-        finish();
     }
 }

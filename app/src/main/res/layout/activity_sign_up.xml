@@ -21,7 +21,8 @@
             android:layout_height="74dp"
             android:layout_gravity="start"
             android:layout_marginTop="8dp"
-            android:src="@drawable/logo_text" />
+            android:src="@drawable/logo_text"
+            android:contentDescription="@string/phazesLogo_description" />
 
         <TextView
             android:layout_width="match_parent"

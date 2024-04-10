@@ -16,19 +16,21 @@
             android:layout_centerInParent="true"
             android:layout_marginTop="50dp"
             android:text="@string/winner_default"
+            android:textAlignment="center"
             android:textColor="@color/white_background"
             android:textSize="40sp" />
 
         <Button
-            android:id="@+id/backToMainMenuButton"
+            android:id="@+id/gameEnd_back"
             android:layout_width="205dp"
-            android:layout_height="83dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
             android:layout_below="@id/winnerText"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
             android:backgroundTint="@color/secondary_background"
-            android:text="Back to Main Menu"
-            android:textSize="18sp"/>
+            android:text="@string/back_to_main_menu"
+            android:textSize="18sp" />
 
     </RelativeLayout>
 
