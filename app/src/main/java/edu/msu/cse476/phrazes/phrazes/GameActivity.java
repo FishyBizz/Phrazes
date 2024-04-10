@@ -32,7 +32,7 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
 //    private TextView tempTimerView;
     private static final int ROUND_END_REQUEST_CODE = 1;
 
-    private static final int ROTATION_THRESHOLD = 8;
+    private static final int ROTATION_THRESHOLD = 9;
 
     private SensorManager sensorManager;
     private Sensor accelerometer;
