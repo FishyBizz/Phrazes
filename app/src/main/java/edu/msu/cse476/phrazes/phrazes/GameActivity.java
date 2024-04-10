@@ -59,7 +59,7 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 
-        // winning team variables
+        // Start Game
         startGameTimer();
     }
 
@@ -124,6 +124,15 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
         // For testing only...
 //        return 20000; // 20 seconds
     }
+
+    // USED FOR testing
+//    public void passButtonClicked(View view) {
+//        updateWord();
+//    }
+//
+//    public void correctButtonClicked(View view) {
+//        updateWord();
+//    }
 
     public void updateWord() {
         // Display a new word
