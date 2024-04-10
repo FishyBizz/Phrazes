@@ -5,7 +5,8 @@
     android:paddingBottom="16dp"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    android:paddingTop="16dp">
+    android:paddingTop="16dp"
+    android:background="@color/main_background">
 
     <TextView
         android:id="@+id/viewCategoryTitle"
@@ -14,6 +15,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:text="@string/choose_category"
+        android:textColor="@color/white_background"
+        android:textSize="30sp"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <ListView
@@ -30,6 +33,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="@string/back_menu_button" />
+        android:text="@string/back_menu_button"
+        android:backgroundTint="@color/secondary_background"
+        android:textSize="25sp"/>
 
 </RelativeLayout>
