@@ -14,6 +14,9 @@ import android.database.sqlite.SQLiteDatabase;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 
 public class AddCards extends AppCompatActivity {
@@ -26,6 +29,7 @@ public class AddCards extends AppCompatActivity {
     private TextView categoryNameTextView;
     private SQLiteDatabase database;
     DatabaseHelper dbHelper = new DatabaseHelper(this);
+    private DatabaseReference rdatabase;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +41,7 @@ public class AddCards extends AppCompatActivity {
         Button uploadButton = findViewById(R.id.uploadButton);
         cardsListView = findViewById(R.id.cardsListView);
         categoryNameTextView = findViewById(R.id.CategoryName);
+        rdatabase = FirebaseDatabase.getInstance().getReference();
 
         // Retrieve the category name from the intent
         String categoryName = getIntent().getStringExtra("CategoryName");
@@ -78,6 +83,13 @@ public class AddCards extends AppCompatActivity {
                 startActivity(buttonIntent);
             }
         });
+        uploadButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveLocally();
+                saveToRealtimeDatabase();
+            }
+        });
 
     }
     public void onSave(View v) {
@@ -98,6 +110,39 @@ public class AddCards extends AppCompatActivity {
         }
         db.close();
         Toast.makeText(AddCards.this, "Cards saved successfully",
+                Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(AddCards.this, MainMenu.class);
+        startActivity(intent);
+    }
+
+    public void saveLocally(){
+        DatabaseContract.setTableName(categoryNameTextView.getText().toString());
+        String createTableQuery = "CREATE TABLE IF NOT EXISTS " + DatabaseContract.getTableName()
+                + " (" +
+                DatabaseContract.CardEntry._ID + " INTEGER PRIMARY KEY," +
+                DatabaseContract.CardEntry.COLUMN_CONTENT + " TEXT)";
+
+        database.execSQL(createTableQuery);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        for (String card : itemList) {
+            ContentValues values = new ContentValues();
+            values.put(DatabaseContract.CardEntry.COLUMN_CONTENT, card);
+            db.insert(DatabaseContract.getTableName(), null, values);
+
+        }
+        db.close();
+    }
+
+    public void saveToRealtimeDatabase(){
+        String categoryName = categoryNameTextView.getText().toString();
+        DatabaseReference categoryRef = rdatabase.child("categories").child(categoryName);
+        categoryRef.removeValue();
+        for (int i = 0; i < itemList.size(); i++) {
+            String card = itemList.get(i);
+            categoryRef.child(String.valueOf(i)).setValue(card);
+        }
+
+        Toast.makeText(AddCards.this, "Cards saved to Firebase successfully",
                 Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(AddCards.this, MainMenu.class);
         startActivity(intent);
