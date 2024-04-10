@@ -17,11 +17,11 @@
 
         <ImageView
             android:id="@+id/logoImageView"
-            android:layout_width="72dp"
-            android:layout_height="59dp"
+            android:layout_width="81dp"
+            android:layout_height="71dp"
             android:layout_gravity="start"
             android:layout_marginTop="8dp"
-            android:src="@drawable/logo_notxt" />
+            android:src="@drawable/logo_text" />
 
 
         <TextView
