@@ -57,35 +57,4 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@color/white_background" />
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/passButton"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/red"
-            android:text="@string/Pass"
-            android:textColor="@color/white"
-            android:onClick="passButtonClicked" />
-
-        <Button
-            android:id="@+id/correctButton"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="@color/green"
-            android:text="@string/correct"
-            android:textColor="@color/white"
-            android:onClick="correctButtonClicked" />
-
-    </LinearLayout>
 </RelativeLayout>
