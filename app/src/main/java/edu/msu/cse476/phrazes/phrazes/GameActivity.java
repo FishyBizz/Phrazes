@@ -11,11 +11,8 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.view.View;
 import android.widget.TextView;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
@@ -137,8 +134,8 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
             updateWord();
             gameTimer = new CountDownTimer(getRandomDelay(), 1000) { // 30 seconds for each round
                 public void onTick(long millisUntilFinished) {
-                    // For testing only...
                     timeLeftOver = millisUntilFinished;
+                    // For testing only...
 //                    tempTimerView.setText("Time: " + millisUntilFinished / 1000);
                 }
                 public void onFinish() {
