@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -76,7 +75,7 @@ public class GameActivity extends AppCompatActivity {
 
     private static long getRandomDelay() {
         Random random = new Random();
-        return 35000 + random.nextInt(90000); // between 35 sec and 90 sec
+        return 35000 + random.nextInt(45000); // between 35 sec and 45 sec
         // For testing only...
 //        return 20000; // 20 seconds
     }
@@ -116,8 +115,6 @@ public class GameActivity extends AppCompatActivity {
         // Logic to record who won the round, could update a model or UI
         gameTimer.cancel(); // Cancel current timer if still running
 
-        Log.d("GameActivity", "Loading Intent...");
-
         // Intent Declaration
         Intent intent = new Intent(GameActivity.this, RoundEndActivity.class);
         startActivityForResult(intent, ROUND_END_REQUEST_CODE);
@@ -128,7 +125,6 @@ public class GameActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == ROUND_END_REQUEST_CODE && resultCode == RESULT_OK) {
             String winner = data.getStringExtra("winner");
-            Log.d("GameActivity", "winner: " + winner);
             if("Blue".equals(winner)) {
                 incrementBlueScore();
             }
@@ -151,10 +147,8 @@ public class GameActivity extends AppCompatActivity {
     private void determineWinningTeam() {
         // Determine the winning team based on the scores
         if (redScore > blueScore) {
-            Log.d("Red Team Wins", String.valueOf(redScore));
             winningTeam = 'R';
         } else if (blueScore > redScore) {
-            Log.d("Red Team Wins", String.valueOf(blueScore));
             winningTeam = 'B';
         } else {
             winningTeam = 'N'; // shouldn't happen with odd rounds
@@ -162,12 +156,10 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void incrementRedScore() {
-        Log.d("GameActivity", "Red Incremented");
         redScore++;
     }
 
     public void incrementBlueScore() {
-        Log.d("GameActivity", "Blue Incremented");
         blueScore++;
     }
 }
