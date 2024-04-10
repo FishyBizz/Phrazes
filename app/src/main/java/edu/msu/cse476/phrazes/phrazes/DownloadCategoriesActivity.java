@@ -38,7 +38,7 @@ public class DownloadCategoriesActivity extends AppCompatActivity {
         backButton = findViewById(R.id.download_back);
         categoryListView = findViewById(R.id.DownloadDeckList);
         categoryList = new ArrayList<>();
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, categoryList);
+        adapter = new ArrayAdapter<>(this,  R.layout.list_item_custom, R.id.textViewListItem, categoryList);
         categoryListView.setAdapter(adapter);
         categoriesRef = FirebaseDatabase.getInstance().getReference().child("categories");
         categoriesRef.addValueEventListener(new ValueEventListener() {
