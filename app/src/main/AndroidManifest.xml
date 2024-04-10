@@ -44,7 +44,8 @@
             android:exported="false" />
         <activity
             android:name=".GameActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:configChanges="orientation|screenSize" />
         <activity
             android:name=".ChooseTeam"
             android:exported="false" />

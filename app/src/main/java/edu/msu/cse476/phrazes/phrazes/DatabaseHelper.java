@@ -6,7 +6,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -53,7 +52,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void setDefault(SQLiteDatabase db){
         String[] defaultData = {"Dog", "Cat", "Shard", "Lion", "Hawk", "Rat", "Dolphin",
                 "Alligator", "Giraffe", "Panther", "Sparty", "Turtle", "Raven", "Whale", "Octopus",
-                "Seagull", "Llama", "Cow", "Snake", "Pig", "Kangaroo"};
+                "Seagull", "Llama", "Cow", "Snake", "Pig", "Kangaroo", "Monkey", "Dragon", "Zebra"};
         for (String data : defaultData){
             ContentValues values = new ContentValues();
             values.put(DatabaseContract.CardEntry.COLUMN_CONTENT, data);
