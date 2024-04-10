@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/main_background"
     tools:context=".WordsActivity">
 
     <ListView
@@ -19,6 +20,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="@string/back_menu_button" />
+        android:backgroundTint="@color/secondary_background"
+        android:text="@string/back_menu_button"
+        android:textSize="25sp"/>
 
 </RelativeLayout>

@@ -34,7 +34,7 @@ public class WordsActivity extends AppCompatActivity {
 
         // Set up the ArrayAdapter and assign it to the ListView
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1, words);
+                R.layout.list_item_custom, R.id.textViewListItem, words);
         wordsListView.setAdapter(adapter);
 
 
