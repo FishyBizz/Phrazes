@@ -30,7 +30,8 @@
             android:layout_marginTop="50dp"
             android:backgroundTint="@color/secondary_background"
             android:text="@string/back_to_main_menu"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textColor="@color/white_background"/>
 
         <Button
             android:id="@+id/gameEnd_picture"
@@ -43,7 +44,8 @@
             android:minHeight="48dp"
             android:onClick="onStartPicture"
             android:text="@string/Picture"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textColor="@color/white_background"/>
 
     </RelativeLayout>
 
