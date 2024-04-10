@@ -3,11 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="16dp"
+    android:layout_marginStart="10dp"
+    android:background="@color/main_background"
     android:paddingLeft="16dp"
-    android:paddingRight="16dp"
     android:paddingTop="16dp"
-    android:background="@color/main_background">
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp">
 
     <TextView
         android:id="@+id/addCardsTitle"
@@ -15,21 +16,21 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:textColor="@color/white_background"
         android:text="@string/AddCardsTitle"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="25sp"/>
+        android:textColor="@color/white_background"
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/CategoryName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/addCardsTitle"
-        android:textColor="@color/white_background"
-        android:text="@string/CategoryName"
         android:layout_marginStart="16dp"
+        android:layout_toEndOf="@id/addCardsTitle"
+        android:text="@string/CategoryName"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="25sp"/>
+        android:textColor="@color/white_background"
+        android:textSize="25sp" />
 
     <LinearLayout
         android:id="@+id/AddCardLayout"
@@ -68,23 +69,23 @@
         android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/secondary_background"
-        android:textColor="@color/white"
         android:layout_above="@+id/category_back"
+        android:backgroundTint="@color/secondary_background"
         android:onClick="onSave"
         android:text="@string/Save"
-        android:textSize="20sp"/>
+        android:textColor="@color/white"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/uploadButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/secondary_background"
-        android:textColor="@color/white"
         android:layout_above="@+id/category_back"
         android:layout_alignEnd="@id/cardsListView"
+        android:backgroundTint="@color/secondary_background"
         android:text="@string/Upload"
-        android:textSize="20sp"/>
+        android:textColor="@color/white"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/category_back"
@@ -92,9 +93,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:backgroundTint="@color/secondary_background"
-        android:textColor="@color/white"
         android:text="@string/back_screen_button"
-        android:textSize="20sp"/>
+        android:textColor="@color/white"
+        android:textSize="20sp" />
 
     <ListView
         android:id="@+id/cardsListView"
