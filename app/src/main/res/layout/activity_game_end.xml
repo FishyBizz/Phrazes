@@ -12,7 +12,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_marginTop="50dp"
-            android:text="@string/none_wins_game"
+            android:text="@string/winner_default"
             android:textSize="29sp" />
 
         <Button

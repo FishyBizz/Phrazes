@@ -33,10 +33,8 @@ public class GameEndActivity extends Activity {
         String winningText;
         if (winningTeam == 'R') {
             winningText = getString(R.string.red_wins_game);
-        } else if (winningTeam == 'B') {
-            winningText = getString(R.string.blue_wins_game);
         } else {
-            winningText = getString(R.string.none_wins_game);
+            winningText = getString(R.string.blue_wins_game);
         }
         winnerText.setText(winningText);
     }

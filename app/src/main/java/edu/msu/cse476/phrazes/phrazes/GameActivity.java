@@ -18,7 +18,7 @@ public class GameActivity extends AppCompatActivity {
 
     private int redScore = 0;
     private int blueScore = 0;
-    private char winningTeam = 'N';
+    private char winningTeam;
     private static CountDownTimer gameTimer;
     private int numRounds;
     private int currRound = 0;
@@ -148,10 +148,8 @@ public class GameActivity extends AppCompatActivity {
         // Determine the winning team based on the scores
         if (redScore > blueScore) {
             winningTeam = 'R';
-        } else if (blueScore > redScore) {
-            winningTeam = 'B';
         } else {
-            winningTeam = 'N'; // shouldn't happen with odd rounds
+            winningTeam = 'B';
         }
     }
 
