@@ -32,6 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:backgroundTint="@color/secondary_background"
+            android:textColor="@color/white"
             android:onClick="onStartChooseDeck"
             android:text="@string/play_button"
             android:textSize="20sp"/>
@@ -43,6 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:backgroundTint="@color/secondary_background"
+            android:textColor="@color/white"
             android:onClick="onStartDownload_Categories"
             android:text="@string/download_button"
             android:textSize="20sp"/>
@@ -53,6 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:backgroundTint="@color/secondary_background"
+            android:textColor="@color/white"
             android:onClick="onStartCreateCategory"
             android:text="@string/create_cat"
             android:textSize="20sp"/>
@@ -64,6 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:backgroundTint="@color/secondary_background"
+            android:textColor="@color/white"
             android:onClick="onStartViewCategory"
             android:text="@string/view_cat"
             android:textSize="20sp"/>
@@ -74,6 +78,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:backgroundTint="@color/secondary_background"
+            android:textColor="@color/white"
             android:onClick="onStartDeleteCategory"
             android:text="@string/delete_button"
             android:textSize="20sp"/>
@@ -84,6 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:backgroundTint="@color/secondary_background"
+            android:textColor="@color/white"
             android:onClick="onStartHowToPlay"
             android:text="@string/how_to_play"
             android:textSize="20sp"/>
@@ -95,6 +101,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:backgroundTint="@color/secondary_background"
+            android:textColor="@color/white"
             android:onClick="onStartSettings"
             android:text="@string/settings_button"
             android:textSize="20sp"/>

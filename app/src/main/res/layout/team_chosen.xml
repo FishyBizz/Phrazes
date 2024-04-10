@@ -23,6 +23,7 @@
         android:layout_alignParentBottom="true"
         android:onClick="onStartCountDown"
         android:backgroundTint="@color/secondary_background"
+        android:textColor="@color/white"
         android:text="@string/start_countdown"
         android:textSize="30sp"/>
 </RelativeLayout>

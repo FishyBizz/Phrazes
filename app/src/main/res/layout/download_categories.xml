@@ -48,5 +48,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:backgroundTint="@color/secondary_background"
+        android:textColor="@color/white"
         android:text="@string/back_menu_button" />
 </RelativeLayout>

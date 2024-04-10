@@ -58,6 +58,7 @@
         android:layout_above="@id/settings_back"
         android:layout_marginBottom="16dp"
         android:backgroundTint="@color/red"
+        android:textColor="@color/white"
         android:text="@string/logout_button"
         android:textSize="20sp"/>
 
@@ -67,6 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:backgroundTint="@color/secondary_background"
+        android:textColor="@color/white"
         android:text="@string/back_menu_button"
         android:textSize="25sp"/>
 </RelativeLayout>

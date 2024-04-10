@@ -21,6 +21,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:backgroundTint="@color/secondary_background"
+        android:textColor="@color/white"
         android:text="@string/back_menu_button"
         android:textSize="25sp"/>
 

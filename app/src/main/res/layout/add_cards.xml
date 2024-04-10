@@ -69,6 +69,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/secondary_background"
+        android:textColor="@color/white"
         android:layout_above="@+id/category_back"
         android:onClick="onSave"
         android:text="@string/Save"
@@ -79,6 +80,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/secondary_background"
+        android:textColor="@color/white"
         android:layout_above="@+id/category_back"
         android:layout_alignEnd="@id/cardsListView"
         android:text="@string/Upload"
@@ -90,6 +92,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:backgroundTint="@color/secondary_background"
+        android:textColor="@color/white"
         android:text="@string/back_screen_button"
         android:textSize="20sp"/>
 
