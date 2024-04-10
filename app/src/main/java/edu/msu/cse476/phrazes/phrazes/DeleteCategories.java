@@ -56,7 +56,7 @@ public class DeleteCategories extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selectedCategory = categoryNames.get(position);
-                if (!selectedCategory.equals("default_table")){
+                if (!selectedCategory.equals("Phazes_Default")){
                     SQLiteDatabase db = dbHelper.getWritableDatabase();
                     db.execSQL("DROP TABLE IF EXISTS " + selectedCategory);
                     db.close();
