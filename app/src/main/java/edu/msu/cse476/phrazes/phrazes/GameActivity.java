@@ -59,7 +59,9 @@ public class GameActivity extends AppCompatActivity{
 
         if (currRound <= numRounds) {
             updateWord();
-            gameTimer = new CountDownTimer(getRandomDelay(), 1000) { // 30 seconds for each round
+
+            // 30 seconds for each round
+            gameTimer = new CountDownTimer(getRandomDelay(), 1000) {
                 public void onTick(long millisUntilFinished) {
                     // For testing only...
 //                    tempTimerView.setText("Time: " + millisUntilFinished / 1000);
@@ -68,6 +70,7 @@ public class GameActivity extends AppCompatActivity{
                     endRound();
                 }
             }.start();
+
         } else {
             endGame();
         }
@@ -75,10 +78,10 @@ public class GameActivity extends AppCompatActivity{
 
 
     private static long getRandomDelay() {
-        //Random random = new Random();
-        //return 35000 + random.nextInt(45000); // between 35 sec and 45 sec
+        Random random = new Random();
+        return 35000 + random.nextInt(45000); // between 35 sec and 45 sec
         // For testing only...
-        return 10000; // 10 seconds
+//        return 10000; // 10 seconds
     }
 
     public void updateWord() {
@@ -139,6 +142,8 @@ public class GameActivity extends AppCompatActivity{
     private void endGame() {
         // Determine the winning team and end the game
         determineWinningTeam();
+
+        // Intent for game winner screen
         Intent intent = new Intent(GameActivity.this, GameEndActivity.class);
         intent.putExtra("winningTeam", winningTeam);
         startActivity(intent);
@@ -161,4 +166,5 @@ public class GameActivity extends AppCompatActivity{
     public void incrementBlueScore() {
         blueScore++;
     }
+
 }

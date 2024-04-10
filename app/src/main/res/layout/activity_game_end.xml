@@ -15,10 +15,11 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_marginTop="50dp"
+            android:fontFamily="sans-serif-medium"
             android:text="@string/winner_default"
             android:textAlignment="center"
             android:textColor="@color/white_background"
-            android:textSize="40sp" />
+            android:textSize="50sp" />
 
         <Button
             android:id="@+id/gameEnd_back"
