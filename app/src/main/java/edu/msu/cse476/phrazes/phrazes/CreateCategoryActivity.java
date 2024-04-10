@@ -43,7 +43,7 @@ public class CreateCategoryActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Get the user category name
                 String categoryName = categoryNameEditText.getText().toString().trim();
-
+                categoryName = categoryName.replace(" ", "_");
                 if(categoryName.isEmpty()) {
                     Toast.makeText(CreateCategoryActivity.this, "Please enter a " +
                             "category name.", Toast.LENGTH_LONG).show();

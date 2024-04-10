@@ -128,7 +128,6 @@ public class AddCards extends AppCompatActivity {
             ContentValues values = new ContentValues();
             values.put(DatabaseContract.CardEntry.COLUMN_CONTENT, card);
             db.insert(DatabaseContract.getTableName(), null, values);
-
         }
         db.close();
     }
