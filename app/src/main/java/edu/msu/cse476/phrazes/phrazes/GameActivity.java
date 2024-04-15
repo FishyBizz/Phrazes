@@ -78,10 +78,10 @@ public class GameActivity extends AppCompatActivity{
 
 
     private static long getRandomDelay() {
-        Random random = new Random();
-        return 35000 + random.nextInt(45000); // between 35 sec and 45 sec
+        //Random random = new Random();
+        //return 35000 + random.nextInt(45000); // between 35 sec and 45 sec
         // For testing only...
-//        return 10000; // 10 seconds
+        return 10000; // 10 seconds
     }
 
     public void updateWord() {
