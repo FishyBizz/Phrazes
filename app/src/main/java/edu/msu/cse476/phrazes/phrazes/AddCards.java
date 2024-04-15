@@ -1,7 +1,10 @@
 package edu.msu.cse476.phrazes.phrazes;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -86,11 +89,21 @@ public class AddCards extends AppCompatActivity {
         uploadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                saveLocally();
-                saveToRealtimeDatabase();
+                ConnectivityManager connectivityManager = (ConnectivityManager)
+                        getSystemService(Context.CONNECTIVITY_SERVICE);
+                if (connectivityManager != null) {
+                    NetworkInfo activeNetwork = connectivityManager.getActiveNetworkInfo();
+                    boolean isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
+                    if (isConnected) {
+                        saveLocally();
+                        saveToRealtimeDatabase();
+                    } else {
+                        Toast.makeText(AddCards.this, "No internet connectivity, cannot"
+                                + " save remotely. Please save locally.",Toast.LENGTH_SHORT).show();
+                    }
+                }
             }
         });
-
     }
     public void onSave(View v) {
         // Create a table with the name specified in categoryName
@@ -141,7 +154,7 @@ public class AddCards extends AppCompatActivity {
             categoryRef.child(String.valueOf(i)).setValue(card);
         }
 
-        Toast.makeText(AddCards.this, "Cards saved to Firebase successfully",
+        Toast.makeText(AddCards.this, "Cards saved to Firebase and local successfully",
                 Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(AddCards.this, MainMenu.class);
         startActivity(intent);
