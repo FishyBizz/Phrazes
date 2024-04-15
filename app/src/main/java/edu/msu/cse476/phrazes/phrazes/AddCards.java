@@ -70,7 +70,7 @@ public class AddCards extends AppCompatActivity {
                     }
                 } else {
                     Toast.makeText(getApplicationContext(),
-                            "You can't add more than 60 items.", Toast.LENGTH_SHORT).show();
+                            "You can't add more than 60 cards.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -122,7 +122,7 @@ public class AddCards extends AppCompatActivity {
 
         }
         db.close();
-        Toast.makeText(AddCards.this, "Cards saved successfully",
+        Toast.makeText(AddCards.this, "Deck saved successfully.",
                 Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(AddCards.this, MainMenu.class);
         startActivity(intent);
@@ -154,7 +154,7 @@ public class AddCards extends AppCompatActivity {
             categoryRef.child(String.valueOf(i)).setValue(card);
         }
 
-        Toast.makeText(AddCards.this, "Cards saved to Firebase and local successfully",
+        Toast.makeText(AddCards.this, "Deck saved to local and remote databases.",
                 Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(AddCards.this, MainMenu.class);
         startActivity(intent);
