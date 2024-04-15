@@ -86,7 +86,7 @@ public class SignUpActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Success
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Toast.makeText(SignUpActivity.this, "Registration" +
+                            Toast.makeText(SignUpActivity.this, "Registration " +
                                     "successful.", Toast.LENGTH_SHORT).show();
                             navigateToLoginActivity();
                         } else {
