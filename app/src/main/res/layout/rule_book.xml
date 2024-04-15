@@ -12,12 +12,12 @@
 
         <ImageView
             android:id="@+id/logoImageView"
-            android:layout_width="72dp"
-            android:layout_height="59dp"
-            android:layout_gravity="start"
-            android:layout_marginTop="45dp"
-            android:src="@drawable/logo_notxt"
-            android:contentDescription="@string/phazesLogo_description" />
+            android:layout_width="198dp"
+            android:layout_height="141dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/phazesLogo_description"
+            android:src="@drawable/logo_text" />
 
         <TextView
             android:id="@+id/title_rules"

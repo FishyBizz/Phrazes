@@ -17,9 +17,9 @@
 
         <ImageView
             android:id="@+id/logoImageView"
-            android:layout_width="81dp"
-            android:layout_height="71dp"
-            android:layout_gravity="start"
+            android:layout_width="198dp"
+            android:layout_height="141dp"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="8dp"
             android:contentDescription="@string/phazesLogo_description"
             android:src="@drawable/logo_text" />
